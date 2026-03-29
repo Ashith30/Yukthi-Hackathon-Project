@@ -105,16 +105,16 @@ INSTRUCTION: Create a highly tailored Mermaid.js graph (graph TD).
 - Do NOT use markdown backticks around your response. Return ONLY the raw Mermaid syntax.
 - The chart should map out Step 1 to Step 5 (milestones), with decision branches where necessary.
 - It MUST be realistic and efficient, customized heavily for their specific personality type.
+- IMPORTANT: ALWAYS wrap node text in double quotes to prevent syntax errors. Example: id["Label (Extra Info)"]
 - Keep node text concise and highly readable.
 - If there are options, use diamond shapes {{}}.
-- You may use a few simple Mermaid styles or default colors.
 
 Example output format strictly:
 graph TD
-    A[Start: 12-Month Plan] --> B(Skill Assessment)
-    B --> C{{Choose Path}}
-    C -->|If High Risk Tolerance| D[Startup Option]
-    C -->|If Stability Preferred| E[Corporate Option]
+    A["Start: 12-Month Plan"] --> B["Skill Assessment"]
+    B --> C{{"Choose Path"}}
+    C -->|"High Risk"| D["Startup Option"]
+    C -->|"Stability"| E["Corporate Option"]
     ...
 """
 
@@ -129,12 +129,10 @@ graph TD
             response = model.generate_content(prompt)
             text = response.text.strip()
             # Clean up markdown output commonly forced by LLM
-            if text.startswith("```mermaid"):
-                text = text[10:]
-            elif text.startswith("```"):
-                text = text.split("\n", 1)[1]
-            if text.endswith("```"):
-                text = text[:-3]
+            if "```mermaid" in text:
+                text = text.split("```mermaid")[1].split("```")[0]
+            elif "```" in text:
+                text = text.split("```")[1]
             return text.strip()
         except ResourceExhausted as e:
             last_err = e
@@ -328,7 +326,7 @@ def get_planning_decision(user_prompt: str, personality: dict, wants_flowchart: 
         
     mermaid_instruction = ""
     if wants_flowchart:
-        mermaid_instruction = ',\n  "mermaid_flowchart": "Generate a chronologically sequenced Mermaid.js graph TD diagram representing the roadmap for this plan. Start with graph TD.\\nExample:\\ngraph TD\\nA[Goal] --> B[Phase 1]\\nB --> C[Phase 2]\\n...\\nreturn ONLY the raw mermaid string syntax (use \\\\n for newlines in JSON). No markdown ticks inside the string."'
+        mermaid_instruction = ',\n  "mermaid_flowchart": "Generate a chronologically sequenced Mermaid.js graph TD diagram representing the roadmap for this plan. Start with graph TD.\\nIMPORTANT: ALWAYS wrap node text in double quotes to prevent syntax errors e.g. A[\\"Phase 1 (Start)\\"]\\nExample:\\ngraph TD\\nA[\\"Goal\\"] --> B[\\"Phase 1\\"]\\nB --> C[\\"Phase 2\\"]\\nreturn ONLY the raw mermaid string syntax (use \\\\n for newlines in JSON). No markdown ticks inside the string."'
         
     prompt = f"""You are an elite productivity and strategic planning AI. The user needs a concrete plan to achieve a specific goal.
 {personality_ctx}

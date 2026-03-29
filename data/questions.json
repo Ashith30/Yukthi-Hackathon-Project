@@ -1,0 +1,2002 @@
+[
+  {
+    "id": 1,
+    "question": "Imagine you discover an ancient, forgotten musical instrument with no instructions or known playing technique. What would be your first inclination?",
+    "options": [
+      "Try to decipher its purpose and experiment with sounds until you find a unique melody.",
+      "Research historical parallels and try to find a traditional way to play it.",
+      "Admire it as an artifact and display it, but not necessarily try to play it.",
+      "Assume it's unplayable and quickly lose interest, focusing on more practical things."
+    ]
+  },
+  {
+    "id": 2,
+    "question": "You attend an art exhibition featuring highly abstract, non-representational pieces. How do you typically react?",
+    "options": [
+      "Spend time pondering the artist's intent and enjoying the novel forms, even if you don't fully 'get' it.",
+      "Look for a plaque or guide to explain the deeper meaning, as you appreciate understanding.",
+      "Find yourself drawn more to pieces that depict recognizable subjects or scenes.",
+      "Feel a bit confused or dismissive, preferring art that is clear and direct."
+    ]
+  },
+  {
+    "id": 3,
+    "question": "You're planning a complex multi-day road trip with friends. What's your typical approach?",
+    "options": [
+      "Create a detailed itinerary, including backup plans and mapped routes for each day.",
+      "Suggest a few key destinations, then let the trip unfold somewhat spontaneously.",
+      "Offer to contribute ideas but largely defer to others for the main planning.",
+      "Expect others to handle the logistics and simply show up ready to go."
+    ]
+  },
+  {
+    "id": 4,
+    "question": "A major deadline for a group project is approaching in two weeks. Your part is critical. What's your strategy?",
+    "options": [
+      "Break down your tasks into smaller steps and start working on them well in advance, aiming for early completion.",
+      "Keep the deadline in mind, but wait until you feel inspired or closer to the date to start.",
+      "Focus on other immediate priorities, trusting you can pull it off in the final days.",
+      "Feel a surge of anxiety and might procrastinate due to the pressure, making it harder to start."
+    ]
+  },
+  {
+    "id": 5,
+    "question": "You arrive alone at a large social gathering where you know only a few people. What do you usually do?",
+    "options": [
+      "Actively seek out new people to meet and engage in conversations.",
+      "Find the people you know and stick with them, occasionally joining in larger group conversations.",
+      "Prefer to observe from the sidelines, engaging only if approached directly.",
+      "Feel a bit overwhelmed and might leave early if you don't connect with anyone quickly."
+    ]
+  },
+  {
+    "id": 6,
+    "question": "After a long, demanding week at work, how do you primarily recharge your energy?",
+    "options": [
+      "Plan a social outing with friends, go to a party, or attend a lively event.",
+      "Mix it up with some social time and some quiet solo activities to balance yourself.",
+      "Seek solitude, perhaps reading a book, watching a movie, or pursuing a personal hobby alone.",
+      "Spend time reflecting on the week, processing thoughts and emotions in a quiet environment."
+    ]
+  },
+  {
+    "id": 7,
+    "question": "A close friend makes a minor but repeated mistake that inconveniences you. How do you address it?",
+    "options": [
+      "Gently bring it up, explaining how it affects you and working towards a solution together.",
+      "Let it slide a few times, but eventually express your frustration directly, perhaps a bit bluntly.",
+      "Avoid confronting them, hoping the issue resolves itself or just tolerating it.",
+      "Become annoyed and start avoiding interactions with that friend, letting resentment build."
+    ]
+  },
+  {
+    "id": 8,
+    "question": "You witness a stranger struggling to carry several heavy bags while trying to open a door. What's your immediate reaction?",
+    "options": [
+      "Immediately offer to help them with their bags or hold the door open.",
+      "Pause for a moment to see if someone else helps, then offer if no one does.",
+      "Feel a moment of sympathy but assume they can manage on their own.",
+      "Continue on your way, focusing on your own tasks and not interfering."
+    ]
+  },
+  {
+    "id": 9,
+    "question": "You are asked to give an impromptu presentation on a topic you know well, but without much preparation time. How do you typically feel?",
+    "options": [
+      "Confident and eager for the challenge, trusting your knowledge to shine through.",
+      "A little nervous initially, but you quickly gather your thoughts and perform adequately.",
+      "A surge of anxiety, worrying about forgetting points or making mistakes, despite your knowledge.",
+      "Overwhelmed by the sudden pressure, possibly leading to a poorer performance than expected."
+    ]
+  },
+  {
+    "id": 10,
+    "question": "You receive constructive criticism on a project you've poured significant effort into. What's your immediate internal response?",
+    "options": [
+      "Appreciate the feedback as an opportunity to learn and improve your work.",
+      "Feel a pang of disappointment or defensiveness, but then rationally consider the points.",
+      "Feel personally attacked or inadequate, dwelling on the criticism for a long time.",
+      "Dismiss the criticism as unfair or misinformed, confident in your original approach."
+    ]
+  },
+  {
+    "id": 11,
+    "question": "You come across a philosophical debate online about the nature of reality, featuring highly abstract and unconventional ideas. How do you engage?",
+    "options": [
+      "Dive into the discussion with great interest, exploring the different perspectives and offering your own novel insights.",
+      "Read through the arguments to understand the different viewpoints, but mostly keep your thoughts to yourself.",
+      "Find the discussion overly theoretical and disconnected from practical concerns, quickly losing interest.",
+      "Prefer debates grounded in empirical evidence and established facts, rather than pure speculation."
+    ]
+  },
+  {
+    "id": 12,
+    "question": "You've set a personal fitness goal for yourself, like running a marathon. How do you approach achieving it?",
+    "options": [
+      "Develop a structured training plan, track your progress rigorously, and consistently adhere to the schedule.",
+      "Start with enthusiasm, but your training might be inconsistent, relying more on motivation spikes.",
+      "Hope to find time to train when you can, but often other commitments take priority.",
+      "You're more likely to participate in spontaneous activities rather than commit to such a long-term, structured goal."
+    ]
+  },
+  {
+    "id": 13,
+    "question": "Imagine you're at a networking event where you don't know anyone, and the room is buzzing with conversations. What's your strategy?",
+    "options": [
+      "Confidently approach various groups, introduce yourself, and initiate conversations with ease.",
+      "Stand on the periphery for a bit, observe, and wait for an opportune moment to join an existing group.",
+      "Feel a strong urge to escape the crowd and find a quieter spot, or engage in superficial pleasantries only if necessary.",
+      "Search for the snack table or a quiet corner, hoping to avoid too much social interaction."
+    ]
+  },
+  {
+    "id": 14,
+    "question": "Your neighbor asks you to house-sit for a week, but it conflicts with a minor personal plan you had. What do you do?",
+    "options": [
+      "Graciously agree, happy to help them out, and adjust your minor plan without complaint.",
+      "Express some reluctance, but ultimately agree to help, perhaps with a slight feeling of inconvenience.",
+      "Decline the request, citing your existing plans, even if they are flexible.",
+      "Politely decline and suggest they find someone else, as your plans are important to you."
+    ]
+  },
+  {
+    "id": 15,
+    "question": "You accidentally send an embarrassing email to your entire company instead of a single colleague. What is your immediate and prolonged reaction?",
+    "options": [
+      "Feel a brief moment of mortification, then quickly apologize, laugh it off, and move on.",
+      "Feel a wave of embarrassment, but then quickly try to fix it and distract yourself from the incident.",
+      "Experience intense shame and anxiety, replaying the scenario, and worrying about colleagues' perceptions for days.",
+      "Feel a strong urge to disappear or hide, dreading interactions with colleagues afterward."
+    ]
+  },
+  {
+    "id": 16,
+    "question": "If given the choice, which book would you rather read?",
+    "options": [
+      "A collection of avant-garde poetry exploring unconventional themes and structures.",
+      "A detailed historical account of a lesser-known ancient civilization.",
+      "A practical self-help guide on improving productivity and time management.",
+      "A popular fiction novel from a best-selling author in a familiar genre."
+    ]
+  },
+  {
+    "id": 17,
+    "question": "You are put in charge of organizing a charity event. How do you approach the logistics?",
+    "options": [
+      "Immediately draft a comprehensive project plan, set clear milestones, and delegate tasks efficiently.",
+      "Outline the main goals, but allow for flexibility and spontaneous decisions as planning progresses.",
+      "Prefer to let others take the lead on specific tasks, offering to help where needed.",
+      "Feel overwhelmed by the scope and struggle to get started, despite good intentions."
+    ]
+  },
+  {
+    "id": 18,
+    "question": "When attending a large conference or seminar, where do you typically prefer to sit?",
+    "options": [
+      "Near the front or in the middle, ready to engage with speakers or participate in discussions.",
+      "In a spot that allows you to observe, but also engage if the topic is particularly interesting.",
+      "Towards the back or near an exit, where you can easily leave or minimize interaction.",
+      "Away from the main crowd, perhaps in a smaller breakout room or a quieter area."
+    ]
+  },
+  {
+    "id": 19,
+    "question": "During a heated group discussion, someone expresses a viewpoint you strongly disagree with, and they become quite defensive. How do you respond?",
+    "options": [
+      "Gently rephrase your points, acknowledge their perspective, and try to find common ground or a compromise.",
+      "Stand firm on your own point, but avoid personal attacks, focusing on the arguments.",
+      "Challenge their view directly and persistently, believing it's important to correct misconceptions.",
+      "Disengage from the argument, finding the conflict uncomfortable and unproductive."
+    ]
+  },
+  {
+    "id": 20,
+    "question": "You discover you made a significant, but correctable, error in a task at work that will require extra effort to fix. What's your dominant emotional response?",
+    "options": [
+      "Acknowledge the mistake, plan the correction, and focus on efficiently resolving it.",
+      "Feel a moment of frustration or embarrassment, but then quickly shift to problem-solving mode.",
+      "Experience intense self-criticism, anxiety about consequences, and a fear of being judged.",
+      "Become stressed and overwhelmed, possibly leading to difficulty in starting the correction process."
+    ]
+  },
+  {
+    "id": 21,
+    "question": "Imagine you discover an ancient, forgotten musical instrument with no instructions or known playing technique. What would be your first inclination?",
+    "options": [
+      "Try to decipher its purpose and experiment with sounds until you find a unique melody.",
+      "Research historical parallels and try to find a traditional way to play it.",
+      "Admire it as an artifact and display it, but not necessarily try to play it.",
+      "Assume it's unplayable and quickly lose interest, focusing on more practical things."
+    ]
+  },
+  {
+    "id": 22,
+    "question": "You attend an art exhibition featuring highly abstract, non-representational pieces. How do you typically react?",
+    "options": [
+      "Spend time pondering the artist's intent and enjoying the novel forms, even if you don't fully 'get' it.",
+      "Look for a plaque or guide to explain the deeper meaning, as you appreciate understanding.",
+      "Find yourself drawn more to pieces that depict recognizable subjects or scenes.",
+      "Feel a bit confused or dismissive, preferring art that is clear and direct."
+    ]
+  },
+  {
+    "id": 23,
+    "question": "You're planning a complex multi-day road trip with friends. What's your typical approach?",
+    "options": [
+      "Create a detailed itinerary, including backup plans and mapped routes for each day.",
+      "Suggest a few key destinations, then let the trip unfold somewhat spontaneously.",
+      "Offer to contribute ideas but largely defer to others for the main planning.",
+      "Expect others to handle the logistics and simply show up ready to go."
+    ]
+  },
+  {
+    "id": 24,
+    "question": "A major deadline for a group project is approaching in two weeks. Your part is critical. What's your strategy?",
+    "options": [
+      "Break down your tasks into smaller steps and start working on them well in advance, aiming for early completion.",
+      "Keep the deadline in mind, but wait until you feel inspired or closer to the date to start.",
+      "Focus on other immediate priorities, trusting you can pull it off in the final days.",
+      "Feel a surge of anxiety and might procrastinate due to the pressure, making it harder to start."
+    ]
+  },
+  {
+    "id": 25,
+    "question": "You arrive alone at a large social gathering where you know only a few people. What do you usually do?",
+    "options": [
+      "Actively seek out new people to meet and engage in conversations.",
+      "Find the people you know and stick with them, occasionally joining in larger group conversations.",
+      "Prefer to observe from the sidelines, engaging only if approached directly.",
+      "Feel a bit overwhelmed and might leave early if you don't connect with anyone quickly."
+    ]
+  },
+  {
+    "id": 26,
+    "question": "After a long, demanding week at work, how do you primarily recharge your energy?",
+    "options": [
+      "Plan a social outing with friends, go to a party, or attend a lively event.",
+      "Mix it up with some social time and some quiet solo activities to balance yourself.",
+      "Seek solitude, perhaps reading a book, watching a movie, or pursuing a personal hobby alone.",
+      "Spend time reflecting on the week, processing thoughts and emotions in a quiet environment."
+    ]
+  },
+  {
+    "id": 27,
+    "question": "A close friend makes a minor but repeated mistake that inconveniences you. How do you address it?",
+    "options": [
+      "Gently bring it up, explaining how it affects you and working towards a solution together.",
+      "Let it slide a few times, but eventually express your frustration directly, perhaps a bit bluntly.",
+      "Avoid confronting them, hoping the issue resolves itself or just tolerating it.",
+      "Become annoyed and start avoiding interactions with that friend, letting resentment build."
+    ]
+  },
+  {
+    "id": 28,
+    "question": "You witness a stranger struggling to carry several heavy bags while trying to open a door. What's your immediate reaction?",
+    "options": [
+      "Immediately offer to help them with their bags or hold the door open.",
+      "Pause for a moment to see if someone else helps, then offer if no one does.",
+      "Feel a moment of sympathy but assume they can manage on their own.",
+      "Continue on your way, focusing on your own tasks and not interfering."
+    ]
+  },
+  {
+    "id": 29,
+    "question": "You are asked to give an impromptu presentation on a topic you know well, but without much preparation time. How do you typically feel?",
+    "options": [
+      "Confident and eager for the challenge, trusting your knowledge to shine through.",
+      "A little nervous initially, but you quickly gather your thoughts and perform adequately.",
+      "A surge of anxiety, worrying about forgetting points or making mistakes, despite your knowledge.",
+      "Overwhelmed by the sudden pressure, possibly leading to a poorer performance than expected."
+    ]
+  },
+  {
+    "id": 30,
+    "question": "You receive constructive criticism on a project you've poured significant effort into. What's your immediate internal response?",
+    "options": [
+      "Appreciate the feedback as an opportunity to learn and improve your work.",
+      "Feel a pang of disappointment or defensiveness, but then rationally consider the points.",
+      "Feel personally attacked or inadequate, dwelling on the criticism for a long time.",
+      "Dismiss the criticism as unfair or misinformed, confident in your original approach."
+    ]
+  },
+  {
+    "id": 31,
+    "question": "You come across a philosophical debate online about the nature of reality, featuring highly abstract and unconventional ideas. How do you engage?",
+    "options": [
+      "Dive into the discussion with great interest, exploring the different perspectives and offering your own novel insights.",
+      "Read through the arguments to understand the different viewpoints, but mostly keep your thoughts to yourself.",
+      "Find the discussion overly theoretical and disconnected from practical concerns, quickly losing interest.",
+      "Prefer debates grounded in empirical evidence and established facts, rather than pure speculation."
+    ]
+  },
+  {
+    "id": 32,
+    "question": "You've set a personal fitness goal for yourself, like running a marathon. How do you approach achieving it?",
+    "options": [
+      "Develop a structured training plan, track your progress rigorously, and consistently adhere to the schedule.",
+      "Start with enthusiasm, but your training might be inconsistent, relying more on motivation spikes.",
+      "Hope to find time to train when you can, but often other commitments take priority.",
+      "You're more likely to participate in spontaneous activities rather than commit to such a long-term, structured goal."
+    ]
+  },
+  {
+    "id": 33,
+    "question": "Imagine you're at a networking event where you don't know anyone, and the room is buzzing with conversations. What's your strategy?",
+    "options": [
+      "Confidently approach various groups, introduce yourself, and initiate conversations with ease.",
+      "Stand on the periphery for a bit, observe, and wait for an opportune moment to join an existing group.",
+      "Feel a strong urge to escape the crowd and find a quieter spot, or engage in superficial pleasantries only if necessary.",
+      "Search for the snack table or a quiet corner, hoping to avoid too much social interaction."
+    ]
+  },
+  {
+    "id": 34,
+    "question": "Your neighbor asks you to house-sit for a week, but it conflicts with a minor personal plan you had. What do you do?",
+    "options": [
+      "Graciously agree, happy to help them out, and adjust your minor plan without complaint.",
+      "Express some reluctance, but ultimately agree to help, perhaps with a slight feeling of inconvenience.",
+      "Decline the request, citing your existing plans, even if they are flexible.",
+      "Politely decline and suggest they find someone else, as your plans are important to you."
+    ]
+  },
+  {
+    "id": 35,
+    "question": "You accidentally send an embarrassing email to your entire company instead of a single colleague. What is your immediate and prolonged reaction?",
+    "options": [
+      "Feel a brief moment of mortification, then quickly apologize, laugh it off, and move on.",
+      "Feel a wave of embarrassment, but then quickly try to fix it and distract yourself from the incident.",
+      "Experience intense shame and anxiety, replaying the scenario, and worrying about colleagues' perceptions for days.",
+      "Feel a strong urge to disappear or hide, dreading interactions with colleagues afterward."
+    ]
+  },
+  {
+    "id": 36,
+    "question": "If given the choice, which book would you rather read?",
+    "options": [
+      "A collection of avant-garde poetry exploring unconventional themes and structures.",
+      "A detailed historical account of a lesser-known ancient civilization.",
+      "A practical self-help guide on improving productivity and time management.",
+      "A popular fiction novel from a best-selling author in a familiar genre."
+    ]
+  },
+  {
+    "id": 37,
+    "question": "You are put in charge of organizing a charity event. How do you approach the logistics?",
+    "options": [
+      "Immediately draft a comprehensive project plan, set clear milestones, and delegate tasks efficiently.",
+      "Outline the main goals, but allow for flexibility and spontaneous decisions as planning progresses.",
+      "Prefer to let others take the lead on specific tasks, offering to help where needed.",
+      "Feel overwhelmed by the scope and struggle to get started, despite good intentions."
+    ]
+  },
+  {
+    "id": 38,
+    "question": "When attending a large conference or seminar, where do you typically prefer to sit?",
+    "options": [
+      "Near the front or in the middle, ready to engage with speakers or participate in discussions.",
+      "In a spot that allows you to observe, but also engage if the topic is particularly interesting.",
+      "Towards the back or near an exit, where you can easily leave or minimize interaction.",
+      "Away from the main crowd, perhaps in a smaller breakout room or a quieter area."
+    ]
+  },
+  {
+    "id": 39,
+    "question": "During a heated group discussion, someone expresses a viewpoint you strongly disagree with, and they become quite defensive. How do you respond?",
+    "options": [
+      "Gently rephrase your points, acknowledge their perspective, and try to find common ground or a compromise.",
+      "Stand firm on your own point, but avoid personal attacks, focusing on the arguments.",
+      "Challenge their view directly and persistently, believing it's important to correct misconceptions.",
+      "Disengage from the argument, finding the conflict uncomfortable and unproductive."
+    ]
+  },
+  {
+    "id": 40,
+    "question": "You discover you made a significant, but correctable, error in a task at work that will require extra effort to fix. What's your dominant emotional response?",
+    "options": [
+      "Acknowledge the mistake, plan the correction, and focus on efficiently resolving it.",
+      "Feel a moment of frustration or embarrassment, but then quickly shift to problem-solving mode.",
+      "Experience intense self-criticism, anxiety about consequences, and a fear of being judged.",
+      "Become stressed and overwhelmed, possibly leading to difficulty in starting the correction process."
+    ]
+  },
+  {
+    "id": 41,
+    "question": "Imagine you discover an ancient, forgotten musical instrument with no instructions or known playing technique. What would be your first inclination?",
+    "options": [
+      "Try to decipher its purpose and experiment with sounds until you find a unique melody.",
+      "Research historical parallels and try to find a traditional way to play it.",
+      "Admire it as an artifact and display it, but not necessarily try to play it.",
+      "Assume it's unplayable and quickly lose interest, focusing on more practical things."
+    ]
+  },
+  {
+    "id": 42,
+    "question": "You attend an art exhibition featuring highly abstract, non-representational pieces. How do you typically react?",
+    "options": [
+      "Spend time pondering the artist's intent and enjoying the novel forms, even if you don't fully 'get' it.",
+      "Look for a plaque or guide to explain the deeper meaning, as you appreciate understanding.",
+      "Find yourself drawn more to pieces that depict recognizable subjects or scenes.",
+      "Feel a bit confused or dismissive, preferring art that is clear and direct."
+    ]
+  },
+  {
+    "id": 43,
+    "question": "You're planning a complex multi-day road trip with friends. What's your typical approach?",
+    "options": [
+      "Create a detailed itinerary, including backup plans and mapped routes for each day.",
+      "Suggest a few key destinations, then let the trip unfold somewhat spontaneously.",
+      "Offer to contribute ideas but largely defer to others for the main planning.",
+      "Expect others to handle the logistics and simply show up ready to go."
+    ]
+  },
+  {
+    "id": 44,
+    "question": "A major deadline for a group project is approaching in two weeks. Your part is critical. What's your strategy?",
+    "options": [
+      "Break down your tasks into smaller steps and start working on them well in advance, aiming for early completion.",
+      "Keep the deadline in mind, but wait until you feel inspired or closer to the date to start.",
+      "Focus on other immediate priorities, trusting you can pull it off in the final days.",
+      "Feel a surge of anxiety and might procrastinate due to the pressure, making it harder to start."
+    ]
+  },
+  {
+    "id": 45,
+    "question": "You arrive alone at a large social gathering where you know only a few people. What do you usually do?",
+    "options": [
+      "Actively seek out new people to meet and engage in conversations.",
+      "Find the people you know and stick with them, occasionally joining in larger group conversations.",
+      "Prefer to observe from the sidelines, engaging only if approached directly.",
+      "Feel a bit overwhelmed and might leave early if you don't connect with anyone quickly."
+    ]
+  },
+  {
+    "id": 46,
+    "question": "After a long, demanding week at work, how do you primarily recharge your energy?",
+    "options": [
+      "Plan a social outing with friends, go to a party, or attend a lively event.",
+      "Mix it up with some social time and some quiet solo activities to balance yourself.",
+      "Seek solitude, perhaps reading a book, watching a movie, or pursuing a personal hobby alone.",
+      "Spend time reflecting on the week, processing thoughts and emotions in a quiet environment."
+    ]
+  },
+  {
+    "id": 47,
+    "question": "A close friend makes a minor but repeated mistake that inconveniences you. How do you address it?",
+    "options": [
+      "Gently bring it up, explaining how it affects you and working towards a solution together.",
+      "Let it slide a few times, but eventually express your frustration directly, perhaps a bit bluntly.",
+      "Avoid confronting them, hoping the issue resolves itself or just tolerating it.",
+      "Become annoyed and start avoiding interactions with that friend, letting resentment build."
+    ]
+  },
+  {
+    "id": 48,
+    "question": "You witness a stranger struggling to carry several heavy bags while trying to open a door. What's your immediate reaction?",
+    "options": [
+      "Immediately offer to help them with their bags or hold the door open.",
+      "Pause for a moment to see if someone else helps, then offer if no one does.",
+      "Feel a moment of sympathy but assume they can manage on their own.",
+      "Continue on your way, focusing on your own tasks and not interfering."
+    ]
+  },
+  {
+    "id": 49,
+    "question": "You are asked to give an impromptu presentation on a topic you know well, but without much preparation time. How do you typically feel?",
+    "options": [
+      "Confident and eager for the challenge, trusting your knowledge to shine through.",
+      "A little nervous initially, but you quickly gather your thoughts and perform adequately.",
+      "A surge of anxiety, worrying about forgetting points or making mistakes, despite your knowledge.",
+      "Overwhelmed by the sudden pressure, possibly leading to a poorer performance than expected."
+    ]
+  },
+  {
+    "id": 50,
+    "question": "You receive constructive criticism on a project you've poured significant effort into. What's your immediate internal response?",
+    "options": [
+      "Appreciate the feedback as an opportunity to learn and improve your work.",
+      "Feel a pang of disappointment or defensiveness, but then rationally consider the points.",
+      "Feel personally attacked or inadequate, dwelling on the criticism for a long time.",
+      "Dismiss the criticism as unfair or misinformed, confident in your original approach."
+    ]
+  },
+  {
+    "id": 51,
+    "question": "You come across a philosophical debate online about the nature of reality, featuring highly abstract and unconventional ideas. How do you engage?",
+    "options": [
+      "Dive into the discussion with great interest, exploring the different perspectives and offering your own novel insights.",
+      "Read through the arguments to understand the different viewpoints, but mostly keep your thoughts to yourself.",
+      "Find the discussion overly theoretical and disconnected from practical concerns, quickly losing interest.",
+      "Prefer debates grounded in empirical evidence and established facts, rather than pure speculation."
+    ]
+  },
+  {
+    "id": 52,
+    "question": "You've set a personal fitness goal for yourself, like running a marathon. How do you approach achieving it?",
+    "options": [
+      "Develop a structured training plan, track your progress rigorously, and consistently adhere to the schedule.",
+      "Start with enthusiasm, but your training might be inconsistent, relying more on motivation spikes.",
+      "Hope to find time to train when you can, but often other commitments take priority.",
+      "You're more likely to participate in spontaneous activities rather than commit to such a long-term, structured goal."
+    ]
+  },
+  {
+    "id": 53,
+    "question": "Imagine you're at a networking event where you don't know anyone, and the room is buzzing with conversations. What's your strategy?",
+    "options": [
+      "Confidently approach various groups, introduce yourself, and initiate conversations with ease.",
+      "Stand on the periphery for a bit, observe, and wait for an opportune moment to join an existing group.",
+      "Feel a strong urge to escape the crowd and find a quieter spot, or engage in superficial pleasantries only if necessary.",
+      "Search for the snack table or a quiet corner, hoping to avoid too much social interaction."
+    ]
+  },
+  {
+    "id": 54,
+    "question": "Your neighbor asks you to house-sit for a week, but it conflicts with a minor personal plan you had. What do you do?",
+    "options": [
+      "Graciously agree, happy to help them out, and adjust your minor plan without complaint.",
+      "Express some reluctance, but ultimately agree to help, perhaps with a slight feeling of inconvenience.",
+      "Decline the request, citing your existing plans, even if they are flexible.",
+      "Politely decline and suggest they find someone else, as your plans are important to you."
+    ]
+  },
+  {
+    "id": 55,
+    "question": "You accidentally send an embarrassing email to your entire company instead of a single colleague. What is your immediate and prolonged reaction?",
+    "options": [
+      "Feel a brief moment of mortification, then quickly apologize, laugh it off, and move on.",
+      "Feel a wave of embarrassment, but then quickly try to fix it and distract yourself from the incident.",
+      "Experience intense shame and anxiety, replaying the scenario, and worrying about colleagues' perceptions for days.",
+      "Feel a strong urge to disappear or hide, dreading interactions with colleagues afterward."
+    ]
+  },
+  {
+    "id": 56,
+    "question": "If given the choice, which book would you rather read?",
+    "options": [
+      "A collection of avant-garde poetry exploring unconventional themes and structures.",
+      "A detailed historical account of a lesser-known ancient civilization.",
+      "A practical self-help guide on improving productivity and time management.",
+      "A popular fiction novel from a best-selling author in a familiar genre."
+    ]
+  },
+  {
+    "id": 57,
+    "question": "You are put in charge of organizing a charity event. How do you approach the logistics?",
+    "options": [
+      "Immediately draft a comprehensive project plan, set clear milestones, and delegate tasks efficiently.",
+      "Outline the main goals, but allow for flexibility and spontaneous decisions as planning progresses.",
+      "Prefer to let others take the lead on specific tasks, offering to help where needed.",
+      "Feel overwhelmed by the scope and struggle to get started, despite good intentions."
+    ]
+  },
+  {
+    "id": 58,
+    "question": "When attending a large conference or seminar, where do you typically prefer to sit?",
+    "options": [
+      "Near the front or in the middle, ready to engage with speakers or participate in discussions.",
+      "In a spot that allows you to observe, but also engage if the topic is particularly interesting.",
+      "Towards the back or near an exit, where you can easily leave or minimize interaction.",
+      "Away from the main crowd, perhaps in a smaller breakout room or a quieter area."
+    ]
+  },
+  {
+    "id": 59,
+    "question": "During a heated group discussion, someone expresses a viewpoint you strongly disagree with, and they become quite defensive. How do you respond?",
+    "options": [
+      "Gently rephrase your points, acknowledge their perspective, and try to find common ground or a compromise.",
+      "Stand firm on your own point, but avoid personal attacks, focusing on the arguments.",
+      "Challenge their view directly and persistently, believing it's important to correct misconceptions.",
+      "Disengage from the argument, finding the conflict uncomfortable and unproductive."
+    ]
+  },
+  {
+    "id": 60,
+    "question": "You discover you made a significant, but correctable, error in a task at work that will require extra effort to fix. What's your dominant emotional response?",
+    "options": [
+      "Acknowledge the mistake, plan the correction, and focus on efficiently resolving it.",
+      "Feel a moment of frustration or embarrassment, but then quickly shift to problem-solving mode.",
+      "Experience intense self-criticism, anxiety about consequences, and a fear of being judged.",
+      "Become stressed and overwhelmed, possibly leading to difficulty in starting the correction process."
+    ]
+  },
+  {
+    "id": 61,
+    "question": "Imagine you discover an ancient, forgotten musical instrument with no instructions or known playing technique. What would be your first inclination?",
+    "options": [
+      "Try to decipher its purpose and experiment with sounds until you find a unique melody.",
+      "Research historical parallels and try to find a traditional way to play it.",
+      "Admire it as an artifact and display it, but not necessarily try to play it.",
+      "Assume it's unplayable and quickly lose interest, focusing on more practical things."
+    ]
+  },
+  {
+    "id": 62,
+    "question": "You attend an art exhibition featuring highly abstract, non-representational pieces. How do you typically react?",
+    "options": [
+      "Spend time pondering the artist's intent and enjoying the novel forms, even if you don't fully 'get' it.",
+      "Look for a plaque or guide to explain the deeper meaning, as you appreciate understanding.",
+      "Find yourself drawn more to pieces that depict recognizable subjects or scenes.",
+      "Feel a bit confused or dismissive, preferring art that is clear and direct."
+    ]
+  },
+  {
+    "id": 63,
+    "question": "You're planning a complex multi-day road trip with friends. What's your typical approach?",
+    "options": [
+      "Create a detailed itinerary, including backup plans and mapped routes for each day.",
+      "Suggest a few key destinations, then let the trip unfold somewhat spontaneously.",
+      "Offer to contribute ideas but largely defer to others for the main planning.",
+      "Expect others to handle the logistics and simply show up ready to go."
+    ]
+  },
+  {
+    "id": 64,
+    "question": "A major deadline for a group project is approaching in two weeks. Your part is critical. What's your strategy?",
+    "options": [
+      "Break down your tasks into smaller steps and start working on them well in advance, aiming for early completion.",
+      "Keep the deadline in mind, but wait until you feel inspired or closer to the date to start.",
+      "Focus on other immediate priorities, trusting you can pull it off in the final days.",
+      "Feel a surge of anxiety and might procrastinate due to the pressure, making it harder to start."
+    ]
+  },
+  {
+    "id": 65,
+    "question": "You arrive alone at a large social gathering where you know only a few people. What do you usually do?",
+    "options": [
+      "Actively seek out new people to meet and engage in conversations.",
+      "Find the people you know and stick with them, occasionally joining in larger group conversations.",
+      "Prefer to observe from the sidelines, engaging only if approached directly.",
+      "Feel a bit overwhelmed and might leave early if you don't connect with anyone quickly."
+    ]
+  },
+  {
+    "id": 66,
+    "question": "After a long, demanding week at work, how do you primarily recharge your energy?",
+    "options": [
+      "Plan a social outing with friends, go to a party, or attend a lively event.",
+      "Mix it up with some social time and some quiet solo activities to balance yourself.",
+      "Seek solitude, perhaps reading a book, watching a movie, or pursuing a personal hobby alone.",
+      "Spend time reflecting on the week, processing thoughts and emotions in a quiet environment."
+    ]
+  },
+  {
+    "id": 67,
+    "question": "A close friend makes a minor but repeated mistake that inconveniences you. How do you address it?",
+    "options": [
+      "Gently bring it up, explaining how it affects you and working towards a solution together.",
+      "Let it slide a few times, but eventually express your frustration directly, perhaps a bit bluntly.",
+      "Avoid confronting them, hoping the issue resolves itself or just tolerating it.",
+      "Become annoyed and start avoiding interactions with that friend, letting resentment build."
+    ]
+  },
+  {
+    "id": 68,
+    "question": "You witness a stranger struggling to carry several heavy bags while trying to open a door. What's your immediate reaction?",
+    "options": [
+      "Immediately offer to help them with their bags or hold the door open.",
+      "Pause for a moment to see if someone else helps, then offer if no one does.",
+      "Feel a moment of sympathy but assume they can manage on their own.",
+      "Continue on your way, focusing on your own tasks and not interfering."
+    ]
+  },
+  {
+    "id": 69,
+    "question": "You are asked to give an impromptu presentation on a topic you know well, but without much preparation time. How do you typically feel?",
+    "options": [
+      "Confident and eager for the challenge, trusting your knowledge to shine through.",
+      "A little nervous initially, but you quickly gather your thoughts and perform adequately.",
+      "A surge of anxiety, worrying about forgetting points or making mistakes, despite your knowledge.",
+      "Overwhelmed by the sudden pressure, possibly leading to a poorer performance than expected."
+    ]
+  },
+  {
+    "id": 70,
+    "question": "You receive constructive criticism on a project you've poured significant effort into. What's your immediate internal response?",
+    "options": [
+      "Appreciate the feedback as an opportunity to learn and improve your work.",
+      "Feel a pang of disappointment or defensiveness, but then rationally consider the points.",
+      "Feel personally attacked or inadequate, dwelling on the criticism for a long time.",
+      "Dismiss the criticism as unfair or misinformed, confident in your original approach."
+    ]
+  },
+  {
+    "id": 71,
+    "question": "You come across a philosophical debate online about the nature of reality, featuring highly abstract and unconventional ideas. How do you engage?",
+    "options": [
+      "Dive into the discussion with great interest, exploring the different perspectives and offering your own novel insights.",
+      "Read through the arguments to understand the different viewpoints, but mostly keep your thoughts to yourself.",
+      "Find the discussion overly theoretical and disconnected from practical concerns, quickly losing interest.",
+      "Prefer debates grounded in empirical evidence and established facts, rather than pure speculation."
+    ]
+  },
+  {
+    "id": 72,
+    "question": "You've set a personal fitness goal for yourself, like running a marathon. How do you approach achieving it?",
+    "options": [
+      "Develop a structured training plan, track your progress rigorously, and consistently adhere to the schedule.",
+      "Start with enthusiasm, but your training might be inconsistent, relying more on motivation spikes.",
+      "Hope to find time to train when you can, but often other commitments take priority.",
+      "You're more likely to participate in spontaneous activities rather than commit to such a long-term, structured goal."
+    ]
+  },
+  {
+    "id": 73,
+    "question": "Imagine you're at a networking event where you don't know anyone, and the room is buzzing with conversations. What's your strategy?",
+    "options": [
+      "Confidently approach various groups, introduce yourself, and initiate conversations with ease.",
+      "Stand on the periphery for a bit, observe, and wait for an opportune moment to join an existing group.",
+      "Feel a strong urge to escape the crowd and find a quieter spot, or engage in superficial pleasantries only if necessary.",
+      "Search for the snack table or a quiet corner, hoping to avoid too much social interaction."
+    ]
+  },
+  {
+    "id": 74,
+    "question": "Your neighbor asks you to house-sit for a week, but it conflicts with a minor personal plan you had. What do you do?",
+    "options": [
+      "Graciously agree, happy to help them out, and adjust your minor plan without complaint.",
+      "Express some reluctance, but ultimately agree to help, perhaps with a slight feeling of inconvenience.",
+      "Decline the request, citing your existing plans, even if they are flexible.",
+      "Politely decline and suggest they find someone else, as your plans are important to you."
+    ]
+  },
+  {
+    "id": 75,
+    "question": "You accidentally send an embarrassing email to your entire company instead of a single colleague. What is your immediate and prolonged reaction?",
+    "options": [
+      "Feel a brief moment of mortification, then quickly apologize, laugh it off, and move on.",
+      "Feel a wave of embarrassment, but then quickly try to fix it and distract yourself from the incident.",
+      "Experience intense shame and anxiety, replaying the scenario, and worrying about colleagues' perceptions for days.",
+      "Feel a strong urge to disappear or hide, dreading interactions with colleagues afterward."
+    ]
+  },
+  {
+    "id": 76,
+    "question": "If given the choice, which book would you rather read?",
+    "options": [
+      "A collection of avant-garde poetry exploring unconventional themes and structures.",
+      "A detailed historical account of a lesser-known ancient civilization.",
+      "A practical self-help guide on improving productivity and time management.",
+      "A popular fiction novel from a best-selling author in a familiar genre."
+    ]
+  },
+  {
+    "id": 77,
+    "question": "You are put in charge of organizing a charity event. How do you approach the logistics?",
+    "options": [
+      "Immediately draft a comprehensive project plan, set clear milestones, and delegate tasks efficiently.",
+      "Outline the main goals, but allow for flexibility and spontaneous decisions as planning progresses.",
+      "Prefer to let others take the lead on specific tasks, offering to help where needed.",
+      "Feel overwhelmed by the scope and struggle to get started, despite good intentions."
+    ]
+  },
+  {
+    "id": 78,
+    "question": "When attending a large conference or seminar, where do you typically prefer to sit?",
+    "options": [
+      "Near the front or in the middle, ready to engage with speakers or participate in discussions.",
+      "In a spot that allows you to observe, but also engage if the topic is particularly interesting.",
+      "Towards the back or near an exit, where you can easily leave or minimize interaction.",
+      "Away from the main crowd, perhaps in a smaller breakout room or a quieter area."
+    ]
+  },
+  {
+    "id": 79,
+    "question": "During a heated group discussion, someone expresses a viewpoint you strongly disagree with, and they become quite defensive. How do you respond?",
+    "options": [
+      "Gently rephrase your points, acknowledge their perspective, and try to find common ground or a compromise.",
+      "Stand firm on your own point, but avoid personal attacks, focusing on the arguments.",
+      "Challenge their view directly and persistently, believing it's important to correct misconceptions.",
+      "Disengage from the argument, finding the conflict uncomfortable and unproductive."
+    ]
+  },
+  {
+    "id": 80,
+    "question": "You discover you made a significant, but correctable, error in a task at work that will require extra effort to fix. What's your dominant emotional response?",
+    "options": [
+      "Acknowledge the mistake, plan the correction, and focus on efficiently resolving it.",
+      "Feel a moment of frustration or embarrassment, but then quickly shift to problem-solving mode.",
+      "Experience intense self-criticism, anxiety about consequences, and a fear of being judged.",
+      "Become stressed and overwhelmed, possibly leading to difficulty in starting the correction process."
+    ]
+  },
+  {
+    "id": 81,
+    "question": "Imagine you discover an ancient, forgotten musical instrument with no instructions or known playing technique. What would be your first inclination?",
+    "options": [
+      "Try to decipher its purpose and experiment with sounds until you find a unique melody.",
+      "Research historical parallels and try to find a traditional way to play it.",
+      "Admire it as an artifact and display it, but not necessarily try to play it.",
+      "Assume it's unplayable and quickly lose interest, focusing on more practical things."
+    ]
+  },
+  {
+    "id": 82,
+    "question": "You attend an art exhibition featuring highly abstract, non-representational pieces. How do you typically react?",
+    "options": [
+      "Spend time pondering the artist's intent and enjoying the novel forms, even if you don't fully 'get' it.",
+      "Look for a plaque or guide to explain the deeper meaning, as you appreciate understanding.",
+      "Find yourself drawn more to pieces that depict recognizable subjects or scenes.",
+      "Feel a bit confused or dismissive, preferring art that is clear and direct."
+    ]
+  },
+  {
+    "id": 83,
+    "question": "You're planning a complex multi-day road trip with friends. What's your typical approach?",
+    "options": [
+      "Create a detailed itinerary, including backup plans and mapped routes for each day.",
+      "Suggest a few key destinations, then let the trip unfold somewhat spontaneously.",
+      "Offer to contribute ideas but largely defer to others for the main planning.",
+      "Expect others to handle the logistics and simply show up ready to go."
+    ]
+  },
+  {
+    "id": 84,
+    "question": "A major deadline for a group project is approaching in two weeks. Your part is critical. What's your strategy?",
+    "options": [
+      "Break down your tasks into smaller steps and start working on them well in advance, aiming for early completion.",
+      "Keep the deadline in mind, but wait until you feel inspired or closer to the date to start.",
+      "Focus on other immediate priorities, trusting you can pull it off in the final days.",
+      "Feel a surge of anxiety and might procrastinate due to the pressure, making it harder to start."
+    ]
+  },
+  {
+    "id": 85,
+    "question": "You arrive alone at a large social gathering where you know only a few people. What do you usually do?",
+    "options": [
+      "Actively seek out new people to meet and engage in conversations.",
+      "Find the people you know and stick with them, occasionally joining in larger group conversations.",
+      "Prefer to observe from the sidelines, engaging only if approached directly.",
+      "Feel a bit overwhelmed and might leave early if you don't connect with anyone quickly."
+    ]
+  },
+  {
+    "id": 86,
+    "question": "After a long, demanding week at work, how do you primarily recharge your energy?",
+    "options": [
+      "Plan a social outing with friends, go to a party, or attend a lively event.",
+      "Mix it up with some social time and some quiet solo activities to balance yourself.",
+      "Seek solitude, perhaps reading a book, watching a movie, or pursuing a personal hobby alone.",
+      "Spend time reflecting on the week, processing thoughts and emotions in a quiet environment."
+    ]
+  },
+  {
+    "id": 87,
+    "question": "A close friend makes a minor but repeated mistake that inconveniences you. How do you address it?",
+    "options": [
+      "Gently bring it up, explaining how it affects you and working towards a solution together.",
+      "Let it slide a few times, but eventually express your frustration directly, perhaps a bit bluntly.",
+      "Avoid confronting them, hoping the issue resolves itself or just tolerating it.",
+      "Become annoyed and start avoiding interactions with that friend, letting resentment build."
+    ]
+  },
+  {
+    "id": 88,
+    "question": "You witness a stranger struggling to carry several heavy bags while trying to open a door. What's your immediate reaction?",
+    "options": [
+      "Immediately offer to help them with their bags or hold the door open.",
+      "Pause for a moment to see if someone else helps, then offer if no one does.",
+      "Feel a moment of sympathy but assume they can manage on their own.",
+      "Continue on your way, focusing on your own tasks and not interfering."
+    ]
+  },
+  {
+    "id": 89,
+    "question": "You are asked to give an impromptu presentation on a topic you know well, but without much preparation time. How do you typically feel?",
+    "options": [
+      "Confident and eager for the challenge, trusting your knowledge to shine through.",
+      "A little nervous initially, but you quickly gather your thoughts and perform adequately.",
+      "A surge of anxiety, worrying about forgetting points or making mistakes, despite your knowledge.",
+      "Overwhelmed by the sudden pressure, possibly leading to a poorer performance than expected."
+    ]
+  },
+  {
+    "id": 90,
+    "question": "You receive constructive criticism on a project you've poured significant effort into. What's your immediate internal response?",
+    "options": [
+      "Appreciate the feedback as an opportunity to learn and improve your work.",
+      "Feel a pang of disappointment or defensiveness, but then rationally consider the points.",
+      "Feel personally attacked or inadequate, dwelling on the criticism for a long time.",
+      "Dismiss the criticism as unfair or misinformed, confident in your original approach."
+    ]
+  },
+  {
+    "id": 91,
+    "question": "You come across a philosophical debate online about the nature of reality, featuring highly abstract and unconventional ideas. How do you engage?",
+    "options": [
+      "Dive into the discussion with great interest, exploring the different perspectives and offering your own novel insights.",
+      "Read through the arguments to understand the different viewpoints, but mostly keep your thoughts to yourself.",
+      "Find the discussion overly theoretical and disconnected from practical concerns, quickly losing interest.",
+      "Prefer debates grounded in empirical evidence and established facts, rather than pure speculation."
+    ]
+  },
+  {
+    "id": 92,
+    "question": "You've set a personal fitness goal for yourself, like running a marathon. How do you approach achieving it?",
+    "options": [
+      "Develop a structured training plan, track your progress rigorously, and consistently adhere to the schedule.",
+      "Start with enthusiasm, but your training might be inconsistent, relying more on motivation spikes.",
+      "Hope to find time to train when you can, but often other commitments take priority.",
+      "You're more likely to participate in spontaneous activities rather than commit to such a long-term, structured goal."
+    ]
+  },
+  {
+    "id": 93,
+    "question": "Imagine you're at a networking event where you don't know anyone, and the room is buzzing with conversations. What's your strategy?",
+    "options": [
+      "Confidently approach various groups, introduce yourself, and initiate conversations with ease.",
+      "Stand on the periphery for a bit, observe, and wait for an opportune moment to join an existing group.",
+      "Feel a strong urge to escape the crowd and find a quieter spot, or engage in superficial pleasantries only if necessary.",
+      "Search for the snack table or a quiet corner, hoping to avoid too much social interaction."
+    ]
+  },
+  {
+    "id": 94,
+    "question": "Your neighbor asks you to house-sit for a week, but it conflicts with a minor personal plan you had. What do you do?",
+    "options": [
+      "Graciously agree, happy to help them out, and adjust your minor plan without complaint.",
+      "Express some reluctance, but ultimately agree to help, perhaps with a slight feeling of inconvenience.",
+      "Decline the request, citing your existing plans, even if they are flexible.",
+      "Politely decline and suggest they find someone else, as your plans are important to you."
+    ]
+  },
+  {
+    "id": 95,
+    "question": "You accidentally send an embarrassing email to your entire company instead of a single colleague. What is your immediate and prolonged reaction?",
+    "options": [
+      "Feel a brief moment of mortification, then quickly apologize, laugh it off, and move on.",
+      "Feel a wave of embarrassment, but then quickly try to fix it and distract yourself from the incident.",
+      "Experience intense shame and anxiety, replaying the scenario, and worrying about colleagues' perceptions for days.",
+      "Feel a strong urge to disappear or hide, dreading interactions with colleagues afterward."
+    ]
+  },
+  {
+    "id": 96,
+    "question": "If given the choice, which book would you rather read?",
+    "options": [
+      "A collection of avant-garde poetry exploring unconventional themes and structures.",
+      "A detailed historical account of a lesser-known ancient civilization.",
+      "A practical self-help guide on improving productivity and time management.",
+      "A popular fiction novel from a best-selling author in a familiar genre."
+    ]
+  },
+  {
+    "id": 97,
+    "question": "You are put in charge of organizing a charity event. How do you approach the logistics?",
+    "options": [
+      "Immediately draft a comprehensive project plan, set clear milestones, and delegate tasks efficiently.",
+      "Outline the main goals, but allow for flexibility and spontaneous decisions as planning progresses.",
+      "Prefer to let others take the lead on specific tasks, offering to help where needed.",
+      "Feel overwhelmed by the scope and struggle to get started, despite good intentions."
+    ]
+  },
+  {
+    "id": 98,
+    "question": "When attending a large conference or seminar, where do you typically prefer to sit?",
+    "options": [
+      "Near the front or in the middle, ready to engage with speakers or participate in discussions.",
+      "In a spot that allows you to observe, but also engage if the topic is particularly interesting.",
+      "Towards the back or near an exit, where you can easily leave or minimize interaction.",
+      "Away from the main crowd, perhaps in a smaller breakout room or a quieter area."
+    ]
+  },
+  {
+    "id": 99,
+    "question": "During a heated group discussion, someone expresses a viewpoint you strongly disagree with, and they become quite defensive. How do you respond?",
+    "options": [
+      "Gently rephrase your points, acknowledge their perspective, and try to find common ground or a compromise.",
+      "Stand firm on your own point, but avoid personal attacks, focusing on the arguments.",
+      "Challenge their view directly and persistently, believing it's important to correct misconceptions.",
+      "Disengage from the argument, finding the conflict uncomfortable and unproductive."
+    ]
+  },
+  {
+    "id": 100,
+    "question": "You discover you made a significant, but correctable, error in a task at work that will require extra effort to fix. What's your dominant emotional response?",
+    "options": [
+      "Acknowledge the mistake, plan the correction, and focus on efficiently resolving it.",
+      "Feel a moment of frustration or embarrassment, but then quickly shift to problem-solving mode.",
+      "Experience intense self-criticism, anxiety about consequences, and a fear of being judged.",
+      "Become stressed and overwhelmed, possibly leading to difficulty in starting the correction process."
+    ]
+  },
+  {
+    "id": 101,
+    "question": "Imagine you discover an ancient, forgotten musical instrument with no instructions or known playing technique. What would be your first inclination?",
+    "options": [
+      "Try to decipher its purpose and experiment with sounds until you find a unique melody.",
+      "Research historical parallels and try to find a traditional way to play it.",
+      "Admire it as an artifact and display it, but not necessarily try to play it.",
+      "Assume it's unplayable and quickly lose interest, focusing on more practical things."
+    ]
+  },
+  {
+    "id": 102,
+    "question": "You attend an art exhibition featuring highly abstract, non-representational pieces. How do you typically react?",
+    "options": [
+      "Spend time pondering the artist's intent and enjoying the novel forms, even if you don't fully 'get' it.",
+      "Look for a plaque or guide to explain the deeper meaning, as you appreciate understanding.",
+      "Find yourself drawn more to pieces that depict recognizable subjects or scenes.",
+      "Feel a bit confused or dismissive, preferring art that is clear and direct."
+    ]
+  },
+  {
+    "id": 103,
+    "question": "You're planning a complex multi-day road trip with friends. What's your typical approach?",
+    "options": [
+      "Create a detailed itinerary, including backup plans and mapped routes for each day.",
+      "Suggest a few key destinations, then let the trip unfold somewhat spontaneously.",
+      "Offer to contribute ideas but largely defer to others for the main planning.",
+      "Expect others to handle the logistics and simply show up ready to go."
+    ]
+  },
+  {
+    "id": 104,
+    "question": "A major deadline for a group project is approaching in two weeks. Your part is critical. What's your strategy?",
+    "options": [
+      "Break down your tasks into smaller steps and start working on them well in advance, aiming for early completion.",
+      "Keep the deadline in mind, but wait until you feel inspired or closer to the date to start.",
+      "Focus on other immediate priorities, trusting you can pull it off in the final days.",
+      "Feel a surge of anxiety and might procrastinate due to the pressure, making it harder to start."
+    ]
+  },
+  {
+    "id": 105,
+    "question": "You arrive alone at a large social gathering where you know only a few people. What do you usually do?",
+    "options": [
+      "Actively seek out new people to meet and engage in conversations.",
+      "Find the people you know and stick with them, occasionally joining in larger group conversations.",
+      "Prefer to observe from the sidelines, engaging only if approached directly.",
+      "Feel a bit overwhelmed and might leave early if you don't connect with anyone quickly."
+    ]
+  },
+  {
+    "id": 106,
+    "question": "After a long, demanding week at work, how do you primarily recharge your energy?",
+    "options": [
+      "Plan a social outing with friends, go to a party, or attend a lively event.",
+      "Mix it up with some social time and some quiet solo activities to balance yourself.",
+      "Seek solitude, perhaps reading a book, watching a movie, or pursuing a personal hobby alone.",
+      "Spend time reflecting on the week, processing thoughts and emotions in a quiet environment."
+    ]
+  },
+  {
+    "id": 107,
+    "question": "A close friend makes a minor but repeated mistake that inconveniences you. How do you address it?",
+    "options": [
+      "Gently bring it up, explaining how it affects you and working towards a solution together.",
+      "Let it slide a few times, but eventually express your frustration directly, perhaps a bit bluntly.",
+      "Avoid confronting them, hoping the issue resolves itself or just tolerating it.",
+      "Become annoyed and start avoiding interactions with that friend, letting resentment build."
+    ]
+  },
+  {
+    "id": 108,
+    "question": "You witness a stranger struggling to carry several heavy bags while trying to open a door. What's your immediate reaction?",
+    "options": [
+      "Immediately offer to help them with their bags or hold the door open.",
+      "Pause for a moment to see if someone else helps, then offer if no one does.",
+      "Feel a moment of sympathy but assume they can manage on their own.",
+      "Continue on your way, focusing on your own tasks and not interfering."
+    ]
+  },
+  {
+    "id": 109,
+    "question": "You are asked to give an impromptu presentation on a topic you know well, but without much preparation time. How do you typically feel?",
+    "options": [
+      "Confident and eager for the challenge, trusting your knowledge to shine through.",
+      "A little nervous initially, but you quickly gather your thoughts and perform adequately.",
+      "A surge of anxiety, worrying about forgetting points or making mistakes, despite your knowledge.",
+      "Overwhelmed by the sudden pressure, possibly leading to a poorer performance than expected."
+    ]
+  },
+  {
+    "id": 110,
+    "question": "You receive constructive criticism on a project you've poured significant effort into. What's your immediate internal response?",
+    "options": [
+      "Appreciate the feedback as an opportunity to learn and improve your work.",
+      "Feel a pang of disappointment or defensiveness, but then rationally consider the points.",
+      "Feel personally attacked or inadequate, dwelling on the criticism for a long time.",
+      "Dismiss the criticism as unfair or misinformed, confident in your original approach."
+    ]
+  },
+  {
+    "id": 111,
+    "question": "You come across a philosophical debate online about the nature of reality, featuring highly abstract and unconventional ideas. How do you engage?",
+    "options": [
+      "Dive into the discussion with great interest, exploring the different perspectives and offering your own novel insights.",
+      "Read through the arguments to understand the different viewpoints, but mostly keep your thoughts to yourself.",
+      "Find the discussion overly theoretical and disconnected from practical concerns, quickly losing interest.",
+      "Prefer debates grounded in empirical evidence and established facts, rather than pure speculation."
+    ]
+  },
+  {
+    "id": 112,
+    "question": "You've set a personal fitness goal for yourself, like running a marathon. How do you approach achieving it?",
+    "options": [
+      "Develop a structured training plan, track your progress rigorously, and consistently adhere to the schedule.",
+      "Start with enthusiasm, but your training might be inconsistent, relying more on motivation spikes.",
+      "Hope to find time to train when you can, but often other commitments take priority.",
+      "You're more likely to participate in spontaneous activities rather than commit to such a long-term, structured goal."
+    ]
+  },
+  {
+    "id": 113,
+    "question": "Imagine you're at a networking event where you don't know anyone, and the room is buzzing with conversations. What's your strategy?",
+    "options": [
+      "Confidently approach various groups, introduce yourself, and initiate conversations with ease.",
+      "Stand on the periphery for a bit, observe, and wait for an opportune moment to join an existing group.",
+      "Feel a strong urge to escape the crowd and find a quieter spot, or engage in superficial pleasantries only if necessary.",
+      "Search for the snack table or a quiet corner, hoping to avoid too much social interaction."
+    ]
+  },
+  {
+    "id": 114,
+    "question": "Your neighbor asks you to house-sit for a week, but it conflicts with a minor personal plan you had. What do you do?",
+    "options": [
+      "Graciously agree, happy to help them out, and adjust your minor plan without complaint.",
+      "Express some reluctance, but ultimately agree to help, perhaps with a slight feeling of inconvenience.",
+      "Decline the request, citing your existing plans, even if they are flexible.",
+      "Politely decline and suggest they find someone else, as your plans are important to you."
+    ]
+  },
+  {
+    "id": 115,
+    "question": "You accidentally send an embarrassing email to your entire company instead of a single colleague. What is your immediate and prolonged reaction?",
+    "options": [
+      "Feel a brief moment of mortification, then quickly apologize, laugh it off, and move on.",
+      "Feel a wave of embarrassment, but then quickly try to fix it and distract yourself from the incident.",
+      "Experience intense shame and anxiety, replaying the scenario, and worrying about colleagues' perceptions for days.",
+      "Feel a strong urge to disappear or hide, dreading interactions with colleagues afterward."
+    ]
+  },
+  {
+    "id": 116,
+    "question": "If given the choice, which book would you rather read?",
+    "options": [
+      "A collection of avant-garde poetry exploring unconventional themes and structures.",
+      "A detailed historical account of a lesser-known ancient civilization.",
+      "A practical self-help guide on improving productivity and time management.",
+      "A popular fiction novel from a best-selling author in a familiar genre."
+    ]
+  },
+  {
+    "id": 117,
+    "question": "You are put in charge of organizing a charity event. How do you approach the logistics?",
+    "options": [
+      "Immediately draft a comprehensive project plan, set clear milestones, and delegate tasks efficiently.",
+      "Outline the main goals, but allow for flexibility and spontaneous decisions as planning progresses.",
+      "Prefer to let others take the lead on specific tasks, offering to help where needed.",
+      "Feel overwhelmed by the scope and struggle to get started, despite good intentions."
+    ]
+  },
+  {
+    "id": 118,
+    "question": "When attending a large conference or seminar, where do you typically prefer to sit?",
+    "options": [
+      "Near the front or in the middle, ready to engage with speakers or participate in discussions.",
+      "In a spot that allows you to observe, but also engage if the topic is particularly interesting.",
+      "Towards the back or near an exit, where you can easily leave or minimize interaction.",
+      "Away from the main crowd, perhaps in a smaller breakout room or a quieter area."
+    ]
+  },
+  {
+    "id": 119,
+    "question": "During a heated group discussion, someone expresses a viewpoint you strongly disagree with, and they become quite defensive. How do you respond?",
+    "options": [
+      "Gently rephrase your points, acknowledge their perspective, and try to find common ground or a compromise.",
+      "Stand firm on your own point, but avoid personal attacks, focusing on the arguments.",
+      "Challenge their view directly and persistently, believing it's important to correct misconceptions.",
+      "Disengage from the argument, finding the conflict uncomfortable and unproductive."
+    ]
+  },
+  {
+    "id": 120,
+    "question": "You discover you made a significant, but correctable, error in a task at work that will require extra effort to fix. What's your dominant emotional response?",
+    "options": [
+      "Acknowledge the mistake, plan the correction, and focus on efficiently resolving it.",
+      "Feel a moment of frustration or embarrassment, but then quickly shift to problem-solving mode.",
+      "Experience intense self-criticism, anxiety about consequences, and a fear of being judged.",
+      "Become stressed and overwhelmed, possibly leading to difficulty in starting the correction process."
+    ]
+  },
+  {
+    "id": 121,
+    "question": "Imagine you discover an ancient, forgotten musical instrument with no instructions or known playing technique. What would be your first inclination?",
+    "options": [
+      "Try to decipher its purpose and experiment with sounds until you find a unique melody.",
+      "Research historical parallels and try to find a traditional way to play it.",
+      "Admire it as an artifact and display it, but not necessarily try to play it.",
+      "Assume it's unplayable and quickly lose interest, focusing on more practical things."
+    ]
+  },
+  {
+    "id": 122,
+    "question": "You attend an art exhibition featuring highly abstract, non-representational pieces. How do you typically react?",
+    "options": [
+      "Spend time pondering the artist's intent and enjoying the novel forms, even if you don't fully 'get' it.",
+      "Look for a plaque or guide to explain the deeper meaning, as you appreciate understanding.",
+      "Find yourself drawn more to pieces that depict recognizable subjects or scenes.",
+      "Feel a bit confused or dismissive, preferring art that is clear and direct."
+    ]
+  },
+  {
+    "id": 123,
+    "question": "You're planning a complex multi-day road trip with friends. What's your typical approach?",
+    "options": [
+      "Create a detailed itinerary, including backup plans and mapped routes for each day.",
+      "Suggest a few key destinations, then let the trip unfold somewhat spontaneously.",
+      "Offer to contribute ideas but largely defer to others for the main planning.",
+      "Expect others to handle the logistics and simply show up ready to go."
+    ]
+  },
+  {
+    "id": 124,
+    "question": "A major deadline for a group project is approaching in two weeks. Your part is critical. What's your strategy?",
+    "options": [
+      "Break down your tasks into smaller steps and start working on them well in advance, aiming for early completion.",
+      "Keep the deadline in mind, but wait until you feel inspired or closer to the date to start.",
+      "Focus on other immediate priorities, trusting you can pull it off in the final days.",
+      "Feel a surge of anxiety and might procrastinate due to the pressure, making it harder to start."
+    ]
+  },
+  {
+    "id": 125,
+    "question": "You arrive alone at a large social gathering where you know only a few people. What do you usually do?",
+    "options": [
+      "Actively seek out new people to meet and engage in conversations.",
+      "Find the people you know and stick with them, occasionally joining in larger group conversations.",
+      "Prefer to observe from the sidelines, engaging only if approached directly.",
+      "Feel a bit overwhelmed and might leave early if you don't connect with anyone quickly."
+    ]
+  },
+  {
+    "id": 126,
+    "question": "After a long, demanding week at work, how do you primarily recharge your energy?",
+    "options": [
+      "Plan a social outing with friends, go to a party, or attend a lively event.",
+      "Mix it up with some social time and some quiet solo activities to balance yourself.",
+      "Seek solitude, perhaps reading a book, watching a movie, or pursuing a personal hobby alone.",
+      "Spend time reflecting on the week, processing thoughts and emotions in a quiet environment."
+    ]
+  },
+  {
+    "id": 127,
+    "question": "A close friend makes a minor but repeated mistake that inconveniences you. How do you address it?",
+    "options": [
+      "Gently bring it up, explaining how it affects you and working towards a solution together.",
+      "Let it slide a few times, but eventually express your frustration directly, perhaps a bit bluntly.",
+      "Avoid confronting them, hoping the issue resolves itself or just tolerating it.",
+      "Become annoyed and start avoiding interactions with that friend, letting resentment build."
+    ]
+  },
+  {
+    "id": 128,
+    "question": "You witness a stranger struggling to carry several heavy bags while trying to open a door. What's your immediate reaction?",
+    "options": [
+      "Immediately offer to help them with their bags or hold the door open.",
+      "Pause for a moment to see if someone else helps, then offer if no one does.",
+      "Feel a moment of sympathy but assume they can manage on their own.",
+      "Continue on your way, focusing on your own tasks and not interfering."
+    ]
+  },
+  {
+    "id": 129,
+    "question": "You are asked to give an impromptu presentation on a topic you know well, but without much preparation time. How do you typically feel?",
+    "options": [
+      "Confident and eager for the challenge, trusting your knowledge to shine through.",
+      "A little nervous initially, but you quickly gather your thoughts and perform adequately.",
+      "A surge of anxiety, worrying about forgetting points or making mistakes, despite your knowledge.",
+      "Overwhelmed by the sudden pressure, possibly leading to a poorer performance than expected."
+    ]
+  },
+  {
+    "id": 130,
+    "question": "You receive constructive criticism on a project you've poured significant effort into. What's your immediate internal response?",
+    "options": [
+      "Appreciate the feedback as an opportunity to learn and improve your work.",
+      "Feel a pang of disappointment or defensiveness, but then rationally consider the points.",
+      "Feel personally attacked or inadequate, dwelling on the criticism for a long time.",
+      "Dismiss the criticism as unfair or misinformed, confident in your original approach."
+    ]
+  },
+  {
+    "id": 131,
+    "question": "You come across a philosophical debate online about the nature of reality, featuring highly abstract and unconventional ideas. How do you engage?",
+    "options": [
+      "Dive into the discussion with great interest, exploring the different perspectives and offering your own novel insights.",
+      "Read through the arguments to understand the different viewpoints, but mostly keep your thoughts to yourself.",
+      "Find the discussion overly theoretical and disconnected from practical concerns, quickly losing interest.",
+      "Prefer debates grounded in empirical evidence and established facts, rather than pure speculation."
+    ]
+  },
+  {
+    "id": 132,
+    "question": "You've set a personal fitness goal for yourself, like running a marathon. How do you approach achieving it?",
+    "options": [
+      "Develop a structured training plan, track your progress rigorously, and consistently adhere to the schedule.",
+      "Start with enthusiasm, but your training might be inconsistent, relying more on motivation spikes.",
+      "Hope to find time to train when you can, but often other commitments take priority.",
+      "You're more likely to participate in spontaneous activities rather than commit to such a long-term, structured goal."
+    ]
+  },
+  {
+    "id": 133,
+    "question": "Imagine you're at a networking event where you don't know anyone, and the room is buzzing with conversations. What's your strategy?",
+    "options": [
+      "Confidently approach various groups, introduce yourself, and initiate conversations with ease.",
+      "Stand on the periphery for a bit, observe, and wait for an opportune moment to join an existing group.",
+      "Feel a strong urge to escape the crowd and find a quieter spot, or engage in superficial pleasantries only if necessary.",
+      "Search for the snack table or a quiet corner, hoping to avoid too much social interaction."
+    ]
+  },
+  {
+    "id": 134,
+    "question": "Your neighbor asks you to house-sit for a week, but it conflicts with a minor personal plan you had. What do you do?",
+    "options": [
+      "Graciously agree, happy to help them out, and adjust your minor plan without complaint.",
+      "Express some reluctance, but ultimately agree to help, perhaps with a slight feeling of inconvenience.",
+      "Decline the request, citing your existing plans, even if they are flexible.",
+      "Politely decline and suggest they find someone else, as your plans are important to you."
+    ]
+  },
+  {
+    "id": 135,
+    "question": "You accidentally send an embarrassing email to your entire company instead of a single colleague. What is your immediate and prolonged reaction?",
+    "options": [
+      "Feel a brief moment of mortification, then quickly apologize, laugh it off, and move on.",
+      "Feel a wave of embarrassment, but then quickly try to fix it and distract yourself from the incident.",
+      "Experience intense shame and anxiety, replaying the scenario, and worrying about colleagues' perceptions for days.",
+      "Feel a strong urge to disappear or hide, dreading interactions with colleagues afterward."
+    ]
+  },
+  {
+    "id": 136,
+    "question": "If given the choice, which book would you rather read?",
+    "options": [
+      "A collection of avant-garde poetry exploring unconventional themes and structures.",
+      "A detailed historical account of a lesser-known ancient civilization.",
+      "A practical self-help guide on improving productivity and time management.",
+      "A popular fiction novel from a best-selling author in a familiar genre."
+    ]
+  },
+  {
+    "id": 137,
+    "question": "You are put in charge of organizing a charity event. How do you approach the logistics?",
+    "options": [
+      "Immediately draft a comprehensive project plan, set clear milestones, and delegate tasks efficiently.",
+      "Outline the main goals, but allow for flexibility and spontaneous decisions as planning progresses.",
+      "Prefer to let others take the lead on specific tasks, offering to help where needed.",
+      "Feel overwhelmed by the scope and struggle to get started, despite good intentions."
+    ]
+  },
+  {
+    "id": 138,
+    "question": "When attending a large conference or seminar, where do you typically prefer to sit?",
+    "options": [
+      "Near the front or in the middle, ready to engage with speakers or participate in discussions.",
+      "In a spot that allows you to observe, but also engage if the topic is particularly interesting.",
+      "Towards the back or near an exit, where you can easily leave or minimize interaction.",
+      "Away from the main crowd, perhaps in a smaller breakout room or a quieter area."
+    ]
+  },
+  {
+    "id": 139,
+    "question": "During a heated group discussion, someone expresses a viewpoint you strongly disagree with, and they become quite defensive. How do you respond?",
+    "options": [
+      "Gently rephrase your points, acknowledge their perspective, and try to find common ground or a compromise.",
+      "Stand firm on your own point, but avoid personal attacks, focusing on the arguments.",
+      "Challenge their view directly and persistently, believing it's important to correct misconceptions.",
+      "Disengage from the argument, finding the conflict uncomfortable and unproductive."
+    ]
+  },
+  {
+    "id": 140,
+    "question": "You discover you made a significant, but correctable, error in a task at work that will require extra effort to fix. What's your dominant emotional response?",
+    "options": [
+      "Acknowledge the mistake, plan the correction, and focus on efficiently resolving it.",
+      "Feel a moment of frustration or embarrassment, but then quickly shift to problem-solving mode.",
+      "Experience intense self-criticism, anxiety about consequences, and a fear of being judged.",
+      "Become stressed and overwhelmed, possibly leading to difficulty in starting the correction process."
+    ]
+  },
+  {
+    "id": 141,
+    "question": "Imagine you discover an ancient, forgotten musical instrument with no instructions or known playing technique. What would be your first inclination?",
+    "options": [
+      "Try to decipher its purpose and experiment with sounds until you find a unique melody.",
+      "Research historical parallels and try to find a traditional way to play it.",
+      "Admire it as an artifact and display it, but not necessarily try to play it.",
+      "Assume it's unplayable and quickly lose interest, focusing on more practical things."
+    ]
+  },
+  {
+    "id": 142,
+    "question": "You attend an art exhibition featuring highly abstract, non-representational pieces. How do you typically react?",
+    "options": [
+      "Spend time pondering the artist's intent and enjoying the novel forms, even if you don't fully 'get' it.",
+      "Look for a plaque or guide to explain the deeper meaning, as you appreciate understanding.",
+      "Find yourself drawn more to pieces that depict recognizable subjects or scenes.",
+      "Feel a bit confused or dismissive, preferring art that is clear and direct."
+    ]
+  },
+  {
+    "id": 143,
+    "question": "You're planning a complex multi-day road trip with friends. What's your typical approach?",
+    "options": [
+      "Create a detailed itinerary, including backup plans and mapped routes for each day.",
+      "Suggest a few key destinations, then let the trip unfold somewhat spontaneously.",
+      "Offer to contribute ideas but largely defer to others for the main planning.",
+      "Expect others to handle the logistics and simply show up ready to go."
+    ]
+  },
+  {
+    "id": 144,
+    "question": "A major deadline for a group project is approaching in two weeks. Your part is critical. What's your strategy?",
+    "options": [
+      "Break down your tasks into smaller steps and start working on them well in advance, aiming for early completion.",
+      "Keep the deadline in mind, but wait until you feel inspired or closer to the date to start.",
+      "Focus on other immediate priorities, trusting you can pull it off in the final days.",
+      "Feel a surge of anxiety and might procrastinate due to the pressure, making it harder to start."
+    ]
+  },
+  {
+    "id": 145,
+    "question": "You arrive alone at a large social gathering where you know only a few people. What do you usually do?",
+    "options": [
+      "Actively seek out new people to meet and engage in conversations.",
+      "Find the people you know and stick with them, occasionally joining in larger group conversations.",
+      "Prefer to observe from the sidelines, engaging only if approached directly.",
+      "Feel a bit overwhelmed and might leave early if you don't connect with anyone quickly."
+    ]
+  },
+  {
+    "id": 146,
+    "question": "After a long, demanding week at work, how do you primarily recharge your energy?",
+    "options": [
+      "Plan a social outing with friends, go to a party, or attend a lively event.",
+      "Mix it up with some social time and some quiet solo activities to balance yourself.",
+      "Seek solitude, perhaps reading a book, watching a movie, or pursuing a personal hobby alone.",
+      "Spend time reflecting on the week, processing thoughts and emotions in a quiet environment."
+    ]
+  },
+  {
+    "id": 147,
+    "question": "A close friend makes a minor but repeated mistake that inconveniences you. How do you address it?",
+    "options": [
+      "Gently bring it up, explaining how it affects you and working towards a solution together.",
+      "Let it slide a few times, but eventually express your frustration directly, perhaps a bit bluntly.",
+      "Avoid confronting them, hoping the issue resolves itself or just tolerating it.",
+      "Become annoyed and start avoiding interactions with that friend, letting resentment build."
+    ]
+  },
+  {
+    "id": 148,
+    "question": "You witness a stranger struggling to carry several heavy bags while trying to open a door. What's your immediate reaction?",
+    "options": [
+      "Immediately offer to help them with their bags or hold the door open.",
+      "Pause for a moment to see if someone else helps, then offer if no one does.",
+      "Feel a moment of sympathy but assume they can manage on their own.",
+      "Continue on your way, focusing on your own tasks and not interfering."
+    ]
+  },
+  {
+    "id": 149,
+    "question": "You are asked to give an impromptu presentation on a topic you know well, but without much preparation time. How do you typically feel?",
+    "options": [
+      "Confident and eager for the challenge, trusting your knowledge to shine through.",
+      "A little nervous initially, but you quickly gather your thoughts and perform adequately.",
+      "A surge of anxiety, worrying about forgetting points or making mistakes, despite your knowledge.",
+      "Overwhelmed by the sudden pressure, possibly leading to a poorer performance than expected."
+    ]
+  },
+  {
+    "id": 150,
+    "question": "You receive constructive criticism on a project you've poured significant effort into. What's your immediate internal response?",
+    "options": [
+      "Appreciate the feedback as an opportunity to learn and improve your work.",
+      "Feel a pang of disappointment or defensiveness, but then rationally consider the points.",
+      "Feel personally attacked or inadequate, dwelling on the criticism for a long time.",
+      "Dismiss the criticism as unfair or misinformed, confident in your original approach."
+    ]
+  },
+  {
+    "id": 151,
+    "question": "You come across a philosophical debate online about the nature of reality, featuring highly abstract and unconventional ideas. How do you engage?",
+    "options": [
+      "Dive into the discussion with great interest, exploring the different perspectives and offering your own novel insights.",
+      "Read through the arguments to understand the different viewpoints, but mostly keep your thoughts to yourself.",
+      "Find the discussion overly theoretical and disconnected from practical concerns, quickly losing interest.",
+      "Prefer debates grounded in empirical evidence and established facts, rather than pure speculation."
+    ]
+  },
+  {
+    "id": 152,
+    "question": "You've set a personal fitness goal for yourself, like running a marathon. How do you approach achieving it?",
+    "options": [
+      "Develop a structured training plan, track your progress rigorously, and consistently adhere to the schedule.",
+      "Start with enthusiasm, but your training might be inconsistent, relying more on motivation spikes.",
+      "Hope to find time to train when you can, but often other commitments take priority.",
+      "You're more likely to participate in spontaneous activities rather than commit to such a long-term, structured goal."
+    ]
+  },
+  {
+    "id": 153,
+    "question": "Imagine you're at a networking event where you don't know anyone, and the room is buzzing with conversations. What's your strategy?",
+    "options": [
+      "Confidently approach various groups, introduce yourself, and initiate conversations with ease.",
+      "Stand on the periphery for a bit, observe, and wait for an opportune moment to join an existing group.",
+      "Feel a strong urge to escape the crowd and find a quieter spot, or engage in superficial pleasantries only if necessary.",
+      "Search for the snack table or a quiet corner, hoping to avoid too much social interaction."
+    ]
+  },
+  {
+    "id": 154,
+    "question": "Your neighbor asks you to house-sit for a week, but it conflicts with a minor personal plan you had. What do you do?",
+    "options": [
+      "Graciously agree, happy to help them out, and adjust your minor plan without complaint.",
+      "Express some reluctance, but ultimately agree to help, perhaps with a slight feeling of inconvenience.",
+      "Decline the request, citing your existing plans, even if they are flexible.",
+      "Politely decline and suggest they find someone else, as your plans are important to you."
+    ]
+  },
+  {
+    "id": 155,
+    "question": "You accidentally send an embarrassing email to your entire company instead of a single colleague. What is your immediate and prolonged reaction?",
+    "options": [
+      "Feel a brief moment of mortification, then quickly apologize, laugh it off, and move on.",
+      "Feel a wave of embarrassment, but then quickly try to fix it and distract yourself from the incident.",
+      "Experience intense shame and anxiety, replaying the scenario, and worrying about colleagues' perceptions for days.",
+      "Feel a strong urge to disappear or hide, dreading interactions with colleagues afterward."
+    ]
+  },
+  {
+    "id": 156,
+    "question": "If given the choice, which book would you rather read?",
+    "options": [
+      "A collection of avant-garde poetry exploring unconventional themes and structures.",
+      "A detailed historical account of a lesser-known ancient civilization.",
+      "A practical self-help guide on improving productivity and time management.",
+      "A popular fiction novel from a best-selling author in a familiar genre."
+    ]
+  },
+  {
+    "id": 157,
+    "question": "You are put in charge of organizing a charity event. How do you approach the logistics?",
+    "options": [
+      "Immediately draft a comprehensive project plan, set clear milestones, and delegate tasks efficiently.",
+      "Outline the main goals, but allow for flexibility and spontaneous decisions as planning progresses.",
+      "Prefer to let others take the lead on specific tasks, offering to help where needed.",
+      "Feel overwhelmed by the scope and struggle to get started, despite good intentions."
+    ]
+  },
+  {
+    "id": 158,
+    "question": "When attending a large conference or seminar, where do you typically prefer to sit?",
+    "options": [
+      "Near the front or in the middle, ready to engage with speakers or participate in discussions.",
+      "In a spot that allows you to observe, but also engage if the topic is particularly interesting.",
+      "Towards the back or near an exit, where you can easily leave or minimize interaction.",
+      "Away from the main crowd, perhaps in a smaller breakout room or a quieter area."
+    ]
+  },
+  {
+    "id": 159,
+    "question": "During a heated group discussion, someone expresses a viewpoint you strongly disagree with, and they become quite defensive. How do you respond?",
+    "options": [
+      "Gently rephrase your points, acknowledge their perspective, and try to find common ground or a compromise.",
+      "Stand firm on your own point, but avoid personal attacks, focusing on the arguments.",
+      "Challenge their view directly and persistently, believing it's important to correct misconceptions.",
+      "Disengage from the argument, finding the conflict uncomfortable and unproductive."
+    ]
+  },
+  {
+    "id": 160,
+    "question": "You discover you made a significant, but correctable, error in a task at work that will require extra effort to fix. What's your dominant emotional response?",
+    "options": [
+      "Acknowledge the mistake, plan the correction, and focus on efficiently resolving it.",
+      "Feel a moment of frustration or embarrassment, but then quickly shift to problem-solving mode.",
+      "Experience intense self-criticism, anxiety about consequences, and a fear of being judged.",
+      "Become stressed and overwhelmed, possibly leading to difficulty in starting the correction process."
+    ]
+  },
+  {
+    "id": 161,
+    "question": "Imagine you discover an ancient, forgotten musical instrument with no instructions or known playing technique. What would be your first inclination?",
+    "options": [
+      "Try to decipher its purpose and experiment with sounds until you find a unique melody.",
+      "Research historical parallels and try to find a traditional way to play it.",
+      "Admire it as an artifact and display it, but not necessarily try to play it.",
+      "Assume it's unplayable and quickly lose interest, focusing on more practical things."
+    ]
+  },
+  {
+    "id": 162,
+    "question": "You attend an art exhibition featuring highly abstract, non-representational pieces. How do you typically react?",
+    "options": [
+      "Spend time pondering the artist's intent and enjoying the novel forms, even if you don't fully 'get' it.",
+      "Look for a plaque or guide to explain the deeper meaning, as you appreciate understanding.",
+      "Find yourself drawn more to pieces that depict recognizable subjects or scenes.",
+      "Feel a bit confused or dismissive, preferring art that is clear and direct."
+    ]
+  },
+  {
+    "id": 163,
+    "question": "You're planning a complex multi-day road trip with friends. What's your typical approach?",
+    "options": [
+      "Create a detailed itinerary, including backup plans and mapped routes for each day.",
+      "Suggest a few key destinations, then let the trip unfold somewhat spontaneously.",
+      "Offer to contribute ideas but largely defer to others for the main planning.",
+      "Expect others to handle the logistics and simply show up ready to go."
+    ]
+  },
+  {
+    "id": 164,
+    "question": "A major deadline for a group project is approaching in two weeks. Your part is critical. What's your strategy?",
+    "options": [
+      "Break down your tasks into smaller steps and start working on them well in advance, aiming for early completion.",
+      "Keep the deadline in mind, but wait until you feel inspired or closer to the date to start.",
+      "Focus on other immediate priorities, trusting you can pull it off in the final days.",
+      "Feel a surge of anxiety and might procrastinate due to the pressure, making it harder to start."
+    ]
+  },
+  {
+    "id": 165,
+    "question": "You arrive alone at a large social gathering where you know only a few people. What do you usually do?",
+    "options": [
+      "Actively seek out new people to meet and engage in conversations.",
+      "Find the people you know and stick with them, occasionally joining in larger group conversations.",
+      "Prefer to observe from the sidelines, engaging only if approached directly.",
+      "Feel a bit overwhelmed and might leave early if you don't connect with anyone quickly."
+    ]
+  },
+  {
+    "id": 166,
+    "question": "After a long, demanding week at work, how do you primarily recharge your energy?",
+    "options": [
+      "Plan a social outing with friends, go to a party, or attend a lively event.",
+      "Mix it up with some social time and some quiet solo activities to balance yourself.",
+      "Seek solitude, perhaps reading a book, watching a movie, or pursuing a personal hobby alone.",
+      "Spend time reflecting on the week, processing thoughts and emotions in a quiet environment."
+    ]
+  },
+  {
+    "id": 167,
+    "question": "A close friend makes a minor but repeated mistake that inconveniences you. How do you address it?",
+    "options": [
+      "Gently bring it up, explaining how it affects you and working towards a solution together.",
+      "Let it slide a few times, but eventually express your frustration directly, perhaps a bit bluntly.",
+      "Avoid confronting them, hoping the issue resolves itself or just tolerating it.",
+      "Become annoyed and start avoiding interactions with that friend, letting resentment build."
+    ]
+  },
+  {
+    "id": 168,
+    "question": "You witness a stranger struggling to carry several heavy bags while trying to open a door. What's your immediate reaction?",
+    "options": [
+      "Immediately offer to help them with their bags or hold the door open.",
+      "Pause for a moment to see if someone else helps, then offer if no one does.",
+      "Feel a moment of sympathy but assume they can manage on their own.",
+      "Continue on your way, focusing on your own tasks and not interfering."
+    ]
+  },
+  {
+    "id": 169,
+    "question": "You are asked to give an impromptu presentation on a topic you know well, but without much preparation time. How do you typically feel?",
+    "options": [
+      "Confident and eager for the challenge, trusting your knowledge to shine through.",
+      "A little nervous initially, but you quickly gather your thoughts and perform adequately.",
+      "A surge of anxiety, worrying about forgetting points or making mistakes, despite your knowledge.",
+      "Overwhelmed by the sudden pressure, possibly leading to a poorer performance than expected."
+    ]
+  },
+  {
+    "id": 170,
+    "question": "You receive constructive criticism on a project you've poured significant effort into. What's your immediate internal response?",
+    "options": [
+      "Appreciate the feedback as an opportunity to learn and improve your work.",
+      "Feel a pang of disappointment or defensiveness, but then rationally consider the points.",
+      "Feel personally attacked or inadequate, dwelling on the criticism for a long time.",
+      "Dismiss the criticism as unfair or misinformed, confident in your original approach."
+    ]
+  },
+  {
+    "id": 171,
+    "question": "You come across a philosophical debate online about the nature of reality, featuring highly abstract and unconventional ideas. How do you engage?",
+    "options": [
+      "Dive into the discussion with great interest, exploring the different perspectives and offering your own novel insights.",
+      "Read through the arguments to understand the different viewpoints, but mostly keep your thoughts to yourself.",
+      "Find the discussion overly theoretical and disconnected from practical concerns, quickly losing interest.",
+      "Prefer debates grounded in empirical evidence and established facts, rather than pure speculation."
+    ]
+  },
+  {
+    "id": 172,
+    "question": "You've set a personal fitness goal for yourself, like running a marathon. How do you approach achieving it?",
+    "options": [
+      "Develop a structured training plan, track your progress rigorously, and consistently adhere to the schedule.",
+      "Start with enthusiasm, but your training might be inconsistent, relying more on motivation spikes.",
+      "Hope to find time to train when you can, but often other commitments take priority.",
+      "You're more likely to participate in spontaneous activities rather than commit to such a long-term, structured goal."
+    ]
+  },
+  {
+    "id": 173,
+    "question": "Imagine you're at a networking event where you don't know anyone, and the room is buzzing with conversations. What's your strategy?",
+    "options": [
+      "Confidently approach various groups, introduce yourself, and initiate conversations with ease.",
+      "Stand on the periphery for a bit, observe, and wait for an opportune moment to join an existing group.",
+      "Feel a strong urge to escape the crowd and find a quieter spot, or engage in superficial pleasantries only if necessary.",
+      "Search for the snack table or a quiet corner, hoping to avoid too much social interaction."
+    ]
+  },
+  {
+    "id": 174,
+    "question": "Your neighbor asks you to house-sit for a week, but it conflicts with a minor personal plan you had. What do you do?",
+    "options": [
+      "Graciously agree, happy to help them out, and adjust your minor plan without complaint.",
+      "Express some reluctance, but ultimately agree to help, perhaps with a slight feeling of inconvenience.",
+      "Decline the request, citing your existing plans, even if they are flexible.",
+      "Politely decline and suggest they find someone else, as your plans are important to you."
+    ]
+  },
+  {
+    "id": 175,
+    "question": "You accidentally send an embarrassing email to your entire company instead of a single colleague. What is your immediate and prolonged reaction?",
+    "options": [
+      "Feel a brief moment of mortification, then quickly apologize, laugh it off, and move on.",
+      "Feel a wave of embarrassment, but then quickly try to fix it and distract yourself from the incident.",
+      "Experience intense shame and anxiety, replaying the scenario, and worrying about colleagues' perceptions for days.",
+      "Feel a strong urge to disappear or hide, dreading interactions with colleagues afterward."
+    ]
+  },
+  {
+    "id": 176,
+    "question": "If given the choice, which book would you rather read?",
+    "options": [
+      "A collection of avant-garde poetry exploring unconventional themes and structures.",
+      "A detailed historical account of a lesser-known ancient civilization.",
+      "A practical self-help guide on improving productivity and time management.",
+      "A popular fiction novel from a best-selling author in a familiar genre."
+    ]
+  },
+  {
+    "id": 177,
+    "question": "You are put in charge of organizing a charity event. How do you approach the logistics?",
+    "options": [
+      "Immediately draft a comprehensive project plan, set clear milestones, and delegate tasks efficiently.",
+      "Outline the main goals, but allow for flexibility and spontaneous decisions as planning progresses.",
+      "Prefer to let others take the lead on specific tasks, offering to help where needed.",
+      "Feel overwhelmed by the scope and struggle to get started, despite good intentions."
+    ]
+  },
+  {
+    "id": 178,
+    "question": "When attending a large conference or seminar, where do you typically prefer to sit?",
+    "options": [
+      "Near the front or in the middle, ready to engage with speakers or participate in discussions.",
+      "In a spot that allows you to observe, but also engage if the topic is particularly interesting.",
+      "Towards the back or near an exit, where you can easily leave or minimize interaction.",
+      "Away from the main crowd, perhaps in a smaller breakout room or a quieter area."
+    ]
+  },
+  {
+    "id": 179,
+    "question": "During a heated group discussion, someone expresses a viewpoint you strongly disagree with, and they become quite defensive. How do you respond?",
+    "options": [
+      "Gently rephrase your points, acknowledge their perspective, and try to find common ground or a compromise.",
+      "Stand firm on your own point, but avoid personal attacks, focusing on the arguments.",
+      "Challenge their view directly and persistently, believing it's important to correct misconceptions.",
+      "Disengage from the argument, finding the conflict uncomfortable and unproductive."
+    ]
+  },
+  {
+    "id": 180,
+    "question": "You discover you made a significant, but correctable, error in a task at work that will require extra effort to fix. What's your dominant emotional response?",
+    "options": [
+      "Acknowledge the mistake, plan the correction, and focus on efficiently resolving it.",
+      "Feel a moment of frustration or embarrassment, but then quickly shift to problem-solving mode.",
+      "Experience intense self-criticism, anxiety about consequences, and a fear of being judged.",
+      "Become stressed and overwhelmed, possibly leading to difficulty in starting the correction process."
+    ]
+  },
+  {
+    "id": 181,
+    "question": "Imagine you discover an ancient, forgotten musical instrument with no instructions or known playing technique. What would be your first inclination?",
+    "options": [
+      "Try to decipher its purpose and experiment with sounds until you find a unique melody.",
+      "Research historical parallels and try to find a traditional way to play it.",
+      "Admire it as an artifact and display it, but not necessarily try to play it.",
+      "Assume it's unplayable and quickly lose interest, focusing on more practical things."
+    ]
+  },
+  {
+    "id": 182,
+    "question": "You attend an art exhibition featuring highly abstract, non-representational pieces. How do you typically react?",
+    "options": [
+      "Spend time pondering the artist's intent and enjoying the novel forms, even if you don't fully 'get' it.",
+      "Look for a plaque or guide to explain the deeper meaning, as you appreciate understanding.",
+      "Find yourself drawn more to pieces that depict recognizable subjects or scenes.",
+      "Feel a bit confused or dismissive, preferring art that is clear and direct."
+    ]
+  },
+  {
+    "id": 183,
+    "question": "You're planning a complex multi-day road trip with friends. What's your typical approach?",
+    "options": [
+      "Create a detailed itinerary, including backup plans and mapped routes for each day.",
+      "Suggest a few key destinations, then let the trip unfold somewhat spontaneously.",
+      "Offer to contribute ideas but largely defer to others for the main planning.",
+      "Expect others to handle the logistics and simply show up ready to go."
+    ]
+  },
+  {
+    "id": 184,
+    "question": "A major deadline for a group project is approaching in two weeks. Your part is critical. What's your strategy?",
+    "options": [
+      "Break down your tasks into smaller steps and start working on them well in advance, aiming for early completion.",
+      "Keep the deadline in mind, but wait until you feel inspired or closer to the date to start.",
+      "Focus on other immediate priorities, trusting you can pull it off in the final days.",
+      "Feel a surge of anxiety and might procrastinate due to the pressure, making it harder to start."
+    ]
+  },
+  {
+    "id": 185,
+    "question": "You arrive alone at a large social gathering where you know only a few people. What do you usually do?",
+    "options": [
+      "Actively seek out new people to meet and engage in conversations.",
+      "Find the people you know and stick with them, occasionally joining in larger group conversations.",
+      "Prefer to observe from the sidelines, engaging only if approached directly.",
+      "Feel a bit overwhelmed and might leave early if you don't connect with anyone quickly."
+    ]
+  },
+  {
+    "id": 186,
+    "question": "After a long, demanding week at work, how do you primarily recharge your energy?",
+    "options": [
+      "Plan a social outing with friends, go to a party, or attend a lively event.",
+      "Mix it up with some social time and some quiet solo activities to balance yourself.",
+      "Seek solitude, perhaps reading a book, watching a movie, or pursuing a personal hobby alone.",
+      "Spend time reflecting on the week, processing thoughts and emotions in a quiet environment."
+    ]
+  },
+  {
+    "id": 187,
+    "question": "A close friend makes a minor but repeated mistake that inconveniences you. How do you address it?",
+    "options": [
+      "Gently bring it up, explaining how it affects you and working towards a solution together.",
+      "Let it slide a few times, but eventually express your frustration directly, perhaps a bit bluntly.",
+      "Avoid confronting them, hoping the issue resolves itself or just tolerating it.",
+      "Become annoyed and start avoiding interactions with that friend, letting resentment build."
+    ]
+  },
+  {
+    "id": 188,
+    "question": "You witness a stranger struggling to carry several heavy bags while trying to open a door. What's your immediate reaction?",
+    "options": [
+      "Immediately offer to help them with their bags or hold the door open.",
+      "Pause for a moment to see if someone else helps, then offer if no one does.",
+      "Feel a moment of sympathy but assume they can manage on their own.",
+      "Continue on your way, focusing on your own tasks and not interfering."
+    ]
+  },
+  {
+    "id": 189,
+    "question": "You are asked to give an impromptu presentation on a topic you know well, but without much preparation time. How do you typically feel?",
+    "options": [
+      "Confident and eager for the challenge, trusting your knowledge to shine through.",
+      "A little nervous initially, but you quickly gather your thoughts and perform adequately.",
+      "A surge of anxiety, worrying about forgetting points or making mistakes, despite your knowledge.",
+      "Overwhelmed by the sudden pressure, possibly leading to a poorer performance than expected."
+    ]
+  },
+  {
+    "id": 190,
+    "question": "You receive constructive criticism on a project you've poured significant effort into. What's your immediate internal response?",
+    "options": [
+      "Appreciate the feedback as an opportunity to learn and improve your work.",
+      "Feel a pang of disappointment or defensiveness, but then rationally consider the points.",
+      "Feel personally attacked or inadequate, dwelling on the criticism for a long time.",
+      "Dismiss the criticism as unfair or misinformed, confident in your original approach."
+    ]
+  },
+  {
+    "id": 191,
+    "question": "You come across a philosophical debate online about the nature of reality, featuring highly abstract and unconventional ideas. How do you engage?",
+    "options": [
+      "Dive into the discussion with great interest, exploring the different perspectives and offering your own novel insights.",
+      "Read through the arguments to understand the different viewpoints, but mostly keep your thoughts to yourself.",
+      "Find the discussion overly theoretical and disconnected from practical concerns, quickly losing interest.",
+      "Prefer debates grounded in empirical evidence and established facts, rather than pure speculation."
+    ]
+  },
+  {
+    "id": 192,
+    "question": "You've set a personal fitness goal for yourself, like running a marathon. How do you approach achieving it?",
+    "options": [
+      "Develop a structured training plan, track your progress rigorously, and consistently adhere to the schedule.",
+      "Start with enthusiasm, but your training might be inconsistent, relying more on motivation spikes.",
+      "Hope to find time to train when you can, but often other commitments take priority.",
+      "You're more likely to participate in spontaneous activities rather than commit to such a long-term, structured goal."
+    ]
+  },
+  {
+    "id": 193,
+    "question": "Imagine you're at a networking event where you don't know anyone, and the room is buzzing with conversations. What's your strategy?",
+    "options": [
+      "Confidently approach various groups, introduce yourself, and initiate conversations with ease.",
+      "Stand on the periphery for a bit, observe, and wait for an opportune moment to join an existing group.",
+      "Feel a strong urge to escape the crowd and find a quieter spot, or engage in superficial pleasantries only if necessary.",
+      "Search for the snack table or a quiet corner, hoping to avoid too much social interaction."
+    ]
+  },
+  {
+    "id": 194,
+    "question": "Your neighbor asks you to house-sit for a week, but it conflicts with a minor personal plan you had. What do you do?",
+    "options": [
+      "Graciously agree, happy to help them out, and adjust your minor plan without complaint.",
+      "Express some reluctance, but ultimately agree to help, perhaps with a slight feeling of inconvenience.",
+      "Decline the request, citing your existing plans, even if they are flexible.",
+      "Politely decline and suggest they find someone else, as your plans are important to you."
+    ]
+  },
+  {
+    "id": 195,
+    "question": "You accidentally send an embarrassing email to your entire company instead of a single colleague. What is your immediate and prolonged reaction?",
+    "options": [
+      "Feel a brief moment of mortification, then quickly apologize, laugh it off, and move on.",
+      "Feel a wave of embarrassment, but then quickly try to fix it and distract yourself from the incident.",
+      "Experience intense shame and anxiety, replaying the scenario, and worrying about colleagues' perceptions for days.",
+      "Feel a strong urge to disappear or hide, dreading interactions with colleagues afterward."
+    ]
+  },
+  {
+    "id": 196,
+    "question": "If given the choice, which book would you rather read?",
+    "options": [
+      "A collection of avant-garde poetry exploring unconventional themes and structures.",
+      "A detailed historical account of a lesser-known ancient civilization.",
+      "A practical self-help guide on improving productivity and time management.",
+      "A popular fiction novel from a best-selling author in a familiar genre."
+    ]
+  },
+  {
+    "id": 197,
+    "question": "You are put in charge of organizing a charity event. How do you approach the logistics?",
+    "options": [
+      "Immediately draft a comprehensive project plan, set clear milestones, and delegate tasks efficiently.",
+      "Outline the main goals, but allow for flexibility and spontaneous decisions as planning progresses.",
+      "Prefer to let others take the lead on specific tasks, offering to help where needed.",
+      "Feel overwhelmed by the scope and struggle to get started, despite good intentions."
+    ]
+  },
+  {
+    "id": 198,
+    "question": "When attending a large conference or seminar, where do you typically prefer to sit?",
+    "options": [
+      "Near the front or in the middle, ready to engage with speakers or participate in discussions.",
+      "In a spot that allows you to observe, but also engage if the topic is particularly interesting.",
+      "Towards the back or near an exit, where you can easily leave or minimize interaction.",
+      "Away from the main crowd, perhaps in a smaller breakout room or a quieter area."
+    ]
+  },
+  {
+    "id": 199,
+    "question": "During a heated group discussion, someone expresses a viewpoint you strongly disagree with, and they become quite defensive. How do you respond?",
+    "options": [
+      "Gently rephrase your points, acknowledge their perspective, and try to find common ground or a compromise.",
+      "Stand firm on your own point, but avoid personal attacks, focusing on the arguments.",
+      "Challenge their view directly and persistently, believing it's important to correct misconceptions.",
+      "Disengage from the argument, finding the conflict uncomfortable and unproductive."
+    ]
+  },
+  {
+    "id": 200,
+    "question": "You discover you made a significant, but correctable, error in a task at work that will require extra effort to fix. What's your dominant emotional response?",
+    "options": [
+      "Acknowledge the mistake, plan the correction, and focus on efficiently resolving it.",
+      "Feel a moment of frustration or embarrassment, but then quickly shift to problem-solving mode.",
+      "Experience intense self-criticism, anxiety about consequences, and a fear of being judged.",
+      "Become stressed and overwhelmed, possibly leading to difficulty in starting the correction process."
+    ]
+  }
+]

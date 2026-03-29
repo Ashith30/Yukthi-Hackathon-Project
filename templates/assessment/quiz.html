@@ -1,0 +1,241 @@
+{% extends "base.html" %}
+{% block title %}Personality Assessment — YUKTHI{% endblock %}
+
+{% block content %}
+<div class="quiz-container">
+  <div class="page-header" style="text-align: center;">
+    <div class="page-title">🧠 Personality Assessment</div>
+    <p class="page-subtitle">10 questions to understand how you think, decide, and interact with the world.</p>
+  </div>
+
+  <!-- Progress -->
+  <div class="quiz-progress" style="max-width: 600px; margin: 0 auto 32px;">
+    <div class="quiz-progress-info" style="justify-content: space-between;">
+      <span id="progressLabel" style="font-weight: 600;">Question 1 of {{ questions|length }}</span>
+      <span id="progressPct" style="color: var(--indigo); font-weight: 600;">0% complete</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <!-- Questions (shown one at a time) -->
+  {% for q in questions %}
+  <div class="question-card" id="q{{ q.id }}" style="{% if loop.index0 != 0 %}display:none;{% endif %} max-width: 680px; margin: 0 auto;">
+    <div class="question-number" style="text-align: center;">Question {{ q.id }} of {{ questions|length }}</div>
+    <div class="question-text" style="text-align: center;">{{ q.question }}</div>
+    <div class="option-list">
+      {% for opt in q.options %}
+      <div class="option-item" data-qid="{{ q.id }}" data-val="{{ loop.index0 }}" onclick="selectOption(this)">
+        <div class="option-letter">{{ ['A','B','C','D'][loop.index0] }}</div>
+        <div class="option-text">{{ opt }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+
+  <!-- Navigation -->
+  <div style="display:flex; gap:12px; justify-content:space-between; margin: 24px auto 0; max-width: 680px; align-items:center;">
+    <button class="btn btn-outline" id="prevBtn" onclick="prevQuestion()" style="display:none; width: 140px; justify-content: center;">
+      <i class="fas fa-arrow-left"></i> Previous
+    </button>
+    <div style="flex:1"></div>
+    <button class="btn btn-primary btn-lg" id="nextBtn" onclick="nextQuestion()" disabled style="width: 140px; justify-content: center;">
+      Next <i class="fas fa-arrow-right"></i>
+      <div class="spinner"></div>
+    </button>
+  </div>
+
+  <!-- Loading state for report generation -->
+  <div id="generatingCard" class="card" style="display:none; margin:24px auto 0; text-align:center; max-width:680px;">
+    <div style="font-size:42px; margin-bottom:16px; animation: bounceIn 1s infinite alternate;">🔮</div>
+    <div style="font-family:var(--font-display); font-size:26px; margin-bottom:8px; color:var(--indigo);">
+      Crafting your personality portrait...
+    </div>
+    <p style="color:var(--text-muted); margin-bottom:20px;">Our AI is orchestrating the perfect analysis of your beautiful mind! ✨</p>
+    <div class="loading-spinner" style="margin:0 auto; border-top-color: var(--teal); border-bottom-color: var(--indigo);"></div>
+  </div>
+</div>
+
+<script>
+  const totalQuestions = {{ questions| length }};
+  const questionsData = {{ questions | tojson | safe }};
+  let currentQ = 1;
+  const answers = {};
+  let isTransitioning = false;
+
+  // ── Web Audio API Sounds ──────────────────
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  let audioCtx;
+
+  function initAudio() {
+    if (!audioCtx) audioCtx = new AudioContext();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+  }
+
+  function playPopSound() {
+    initAudio();
+    const osc = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.1);
+    gainNode.gain.setValueAtTime(0.3, audioCtx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
+    osc.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.1);
+  }
+
+  function playSwooshSound() {
+    initAudio();
+    const osc = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(300, audioCtx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.2);
+    gainNode.gain.setValueAtTime(0.15, audioCtx.currentTime);
+    gainNode.gain.linearRampToValueAtTime(0.01, audioCtx.currentTime + 0.2);
+    osc.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.2);
+  }
+
+  function playMagicSound() {
+    initAudio();
+    const osc = audioCtx.createOscillator();
+    const gainNode = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+    osc.frequency.linearRampToValueAtTime(1200, audioCtx.currentTime + 0.4);
+    gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
+    gainNode.gain.linearRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+    osc.connect(gainNode);
+    gainNode.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.4);
+  }
+
+  function selectOption(el) {
+    if (isTransitioning) return;
+    playPopSound();
+    // Deselect siblings
+    document.querySelectorAll(`[data-qid="${el.dataset.qid}"]`).forEach(o => o.classList.remove("selected"));
+    el.classList.add("selected");
+    answers[el.dataset.qid] = parseInt(el.dataset.val);
+    document.getElementById("nextBtn").disabled = false;
+  }
+
+  function updateProgress() {
+    const pct = Math.round(((currentQ - 1) / totalQuestions) * 100);
+    document.getElementById("progressFill").style.width = pct + "%";
+    document.getElementById("progressLabel").textContent = `Question ${currentQ} of ${totalQuestions}`;
+    document.getElementById("progressPct").textContent = pct + "% complete";
+  }
+
+  function nextQuestion() {
+    if (isTransitioning) return;
+    if (answers[currentQ] === undefined) {
+      showToast("Please select an answer first", "error");
+      return;
+    }
+
+    if (currentQ === totalQuestions) {
+      submitAssessment();
+      return;
+    }
+    
+    isTransitioning = true;
+    playSwooshSound();
+    
+    const curCard = document.getElementById("q" + currentQ);
+    curCard.classList.add("exit");
+    
+    setTimeout(() => {
+      curCard.style.display = "none";
+      curCard.classList.remove("exit");
+      currentQ++;
+      
+      const nextCard = document.getElementById("q" + currentQ);
+      nextCard.style.display = "block";
+      // Re-trigger CSS animation
+      nextCard.style.animation = 'none';
+      nextCard.offsetHeight; 
+      nextCard.style.animation = null;
+      
+      document.getElementById("prevBtn").style.display = currentQ > 1 ? "flex" : "none";
+
+      const nextBtn = document.getElementById("nextBtn");
+      if (currentQ === totalQuestions) {
+        nextBtn.innerHTML = '<span class="btn-text">Complete Assessment 🎯</span><div class="spinner"></div>';
+        nextBtn.classList.add('btn-teal');
+        nextBtn.classList.remove('btn-primary');
+      }
+      nextBtn.disabled = answers[currentQ] === undefined;
+      updateProgress();
+      isTransitioning = false;
+    }, 350);
+  }
+
+  function prevQuestion() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    playSwooshSound();
+    const curCard = document.getElementById("q" + currentQ);
+    curCard.style.display = "none";
+    currentQ--;
+    
+    const prevCard = document.getElementById("q" + currentQ);
+    prevCard.style.display = "block";
+    prevCard.style.animation = 'none';
+    prevCard.offsetHeight;
+    prevCard.style.animation = null;
+    
+    document.getElementById("prevBtn").style.display = currentQ > 1 ? "flex" : "none";
+
+    const nextBtn = document.getElementById("nextBtn");
+    nextBtn.innerHTML = '<span class="btn-text">Next</span> <i class="fas fa-arrow-right"></i><div class="spinner"></div>';
+    nextBtn.classList.add('btn-primary');
+    nextBtn.classList.remove('btn-teal');
+    nextBtn.disabled = false;
+    updateProgress();
+    isTransitioning = false;
+  }
+
+  async function submitAssessment() {
+    // Map the selected indices to actual question/answer text
+    const payloadResponses = questionsData.map((q, idx) => {
+      const selectedOptionIndex = answers[q.id] ?? 0;
+      return {
+        question: q.question,
+        answer: q.options[selectedOptionIndex]
+      };
+    });
+
+    // Show generating state
+    playMagicSound();
+    document.querySelectorAll(".question-card").forEach(c => c.style.display = "none");
+    document.querySelector(".quiz-progress").style.display = "none";
+    document.getElementById("generatingCard").style.display = "block";
+    document.querySelector("[style*='justify-content:space-between']").style.display = "none";
+
+    try {
+      const res = await apiPost("/assessment/submit", {
+        answers: payloadResponses
+      });
+
+      if (res.success) {
+        setTimeout(() => window.location.href = "/assessment/report", 1000);
+      } else {
+        showToast("Error generating report. Please try again.", "error");
+        window.location.reload();
+      }
+    } catch (e) {
+      showToast("Connection error. Please try again.", "error");
+    }
+  }
+</script>
+{% endblock %}

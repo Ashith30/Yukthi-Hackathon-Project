@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — YUKTHI{% endblock %}
+
+{% block content %}
+<!-- Welcome Banner -->
+<div class="welcome-banner">
+  <div class="welcome-text">
+    <h1>Good to see you, {{ user.name.split()[0] }} 👋</h1>
+    <p>
+      {% if personality %}
+      You're a <strong>{{ personality.personality_type }}</strong> — ready to make better decisions today.
+      {% else %}
+      Complete your personality assessment to unlock personalized insights.
+      {% endif %}
+    </p>
+  </div>
+  {% if not personality %}
+  <a href="/assessment/quiz" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5); color:white; background:rgba(255,255,255,0.15);">
+    <i class="fas fa-brain"></i> Take Assessment
+  </a>
+  {% else %}
+  <a href="/assessment/report" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5); color:white; background:rgba(255,255,255,0.15);">
+    View Full Report
+  </a>
+  {% endif %}
+</div>
+
+<!-- Personality mini-card if exists -->
+{% if personality %}
+<div class="card" style="background:linear-gradient(135deg,var(--indigo-soft),var(--violet-soft)); border:1px solid rgba(76,110,245,0.15); margin-bottom:28px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+  <div style="font-size:48px;">{{ personality.archetype_emoji }}</div>
+  <div style="flex:1;">
+    <div style="font-family:var(--font-display); font-size:20px; color:var(--text-primary);">{{ personality.personality_type }}</div>
+    <p style="font-size:13.5px; color:var(--text-muted); margin-top:4px;">{{ personality.tagline }}</p>
+    <div class="tag-list" style="margin-top:10px;">
+      {% for trait in personality.core_traits %}
+      <span class="badge badge-indigo">{{ trait }}</span>
+      {% endfor %}
+    </div>
+  </div>
+  <a href="/assessment/report" class="btn btn-outline btn-sm">Full Report →</a>
+</div>
+{% endif %}
+
+<!-- Main Feature Cards -->
+<div class="page-header">
+  <div class="page-title">What do you want to do today?</div>
+</div>
+
+<div class="decision-domain-cards" style="margin-bottom:36px;">
+  <a href="/decision/career" class="domain-card">
+    <div class="domain-card-icon" style="background:var(--indigo-soft);">🧭</div>
+    <div class="domain-card-title">Career Path</div>
+    <p class="domain-card-desc">Get your digital twin analysis and career guidance with market data</p>
+  </a>
+  <a href="/decision/finance" class="domain-card">
+    <div class="domain-card-icon" style="background:var(--teal-soft);">📈</div>
+    <div class="domain-card-title">Finance</div>
+    <p class="domain-card-desc">Real economic data from FRED & Alpha Vantage for smarter money decisions</p>
+  </a>
+  <a href="/decision/planning" class="domain-card">
+    <div class="domain-card-icon" style="background:var(--amber-soft);">📅</div>
+    <div class="domain-card-title">Productive Planning</div>
+    <p class="domain-card-desc">Gemini-powered weekly scheduling and priority frameworks</p>
+  </a>
+</div>
+
+<div class="grid-2" style="margin-bottom:28px;">
+  <a href="/cognitive/" class="domain-card" style="text-align:left;">
+    <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+      <div class="domain-card-icon" style="background:linear-gradient(135deg,#1a1a2e,#16213e); color:white; margin:0;">🛡️</div>
+      <div>
+        <div class="domain-card-title">Cognitive Monitor</div>
+        <span class="badge badge-teal" style="font-size:11px;">NEW</span>
+      </div>
+    </div>
+    <p class="domain-card-desc">Track typing rhythm and speech patterns to detect early cognitive changes in yourself or a loved one.</p>
+  </a>
+  <a href="/assessment/quiz" class="domain-card" style="text-align:left;">
+    <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+      <div class="domain-card-icon" style="background:var(--violet-soft); margin:0;">🔄</div>
+      <div>
+        <div class="domain-card-title">Retake Assessment</div>
+        <span class="badge badge-violet" style="font-size:11px;">Update Profile</span>
+      </div>
+    </div>
+    <p class="domain-card-desc">People grow and change. Retake the quiz to keep your profile accurate and insights relevant.</p>
+  </a>
+</div>
+
+<!-- Quick stats -->
+<div class="page-header"><div class="page-title" style="font-size:20px;">Your Overview</div></div>
+<div class="grid-4">
+  <div class="stat-card">
+    <div class="stat-icon" style="background:var(--indigo-soft); color:var(--indigo);">
+      <i class="fas fa-brain"></i>
+    </div>
+    <div class="stat-value" id="statAssessment">{% if personality %}Done{% else %}Pending{% endif %}</div>
+    <div class="stat-label">Personality Profile</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon" style="background:var(--teal-soft); color:var(--teal);">
+      <i class="fas fa-comments"></i>
+    </div>
+    <div class="stat-value" id="statChats">0</div>
+    <div class="stat-label">Decisions Analyzed</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon" style="background:var(--amber-soft); color:var(--amber);">
+      <i class="fas fa-heartbeat"></i>
+    </div>
+    <div class="stat-value" id="statMonitoring">0</div>
+    <div class="stat-label">Monitoring Sessions</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-icon" style="background:var(--green-soft); color:var(--green);">
+      <i class="fas fa-shield-check"></i>
+    </div>
+    <div class="stat-value" id="statStatus">Good</div>
+    <div class="stat-label">Cognitive Status</div>
+  </div>
+</div>
+
+<script>
+// Load stats from history
+fetch("/decision/history").then(r=>r.json()).then(data => {
+  const n = (data.history||[]).length;
+  animateCount(document.getElementById("statChats"), n);
+}).catch(()=>{});
+
+fetch("/cognitive/dashboard-data").then(r=>r.json()).then(data => {
+  const analyses = data.analyses || [];
+  animateCount(document.getElementById("statMonitoring"), analyses.length);
+  
+  if (analyses.length > 0) {
+    const latest = analyses[0];
+    if (latest.result?.status) {
+      document.getElementById("statStatus").textContent = latest.result.status.split(" ")[0];
+    }
+  }
+}).catch(()=>{});
+</script>
+{% endblock %}

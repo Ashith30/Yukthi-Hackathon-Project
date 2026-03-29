@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% block title %}Omni-Domain Architect — YUKTHI{% endblock %}
+
+{% block content %}
+<!-- Include Mermaid JS dynamically for Mindmaps -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+</script>
+
+<div class="page-header" style="text-align:center; padding: 40px 0 20px;">
+  <div style="display:inline-flex; align-items:center; justify-content:center; gap:12px; margin-bottom:12px;">
+    <div class="pulse-dot" style="width:12px; height:12px; background:var(--violet);"></div>
+    <div class="page-title" style="margin:0; font-size:32px; background: linear-gradient(135deg, var(--violet), var(--indigo)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Omni-Domain Architect</div>
+  </div>
+  <p class="page-subtitle" style="font-size:16px; max-width:600px; margin:0 auto;">
+    Do not categorize your problem. Describe your entire life situation, decision, or crisis. 
+    The AI will automatically slice it into functional domains and build a mind map.
+  </p>
+</div>
+
+{% if personality %}
+<div class="card" style="margin-bottom:32px; background:var(--bg-soft); border-left:4px solid var(--violet); display:flex; gap:16px; align-items:center;">
+  <div style="font-size:32px;">{{ personality.archetype_emoji }}</div>
+  <div>
+    <div style="font-weight:700; color:var(--text-primary); margin-bottom:4px;">{{ personality.personality_type }} Engine Active</div>
+    <div style="font-size:13.5px; color:var(--text-muted);">
+      This blueprint will be strictly tailored to your core traits: <em>{{ ', '.join(personality.core_traits[:3]) }}</em>.
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<div class="card" style="margin-bottom:40px; border-color:var(--violet); position:relative; overflow:hidden;">
+  <div style="position:absolute; top:0; left:0; width:100%; height:4px; background:linear-gradient(90deg, var(--violet), var(--indigo));"></div>
+  
+  <div class="form-group" style="margin-top:12px;">
+    <label class="form-label" style="text-transform:uppercase; letter-spacing:1px; font-size:11px; color:var(--violet);">Core Situation / Directive</label>
+    <textarea class="form-textarea" id="omniPrompt" style="min-height:160px; font-family:var(--font-mono); font-size:14px; background:rgba(0,0,0,0.02); border:1px solid rgba(139, 92, 246, 0.3);"
+      placeholder="E.g., I'm considering dropping out of my Masters in CS to launch an AI startup, but I have $40k in student debt, my parents are highly against it, and I don't technically have a co-founder yet. Give me the breakdown."></textarea>
+  </div>
+  
+  <div style="display:flex; justify-content:center; margin-top:24px;">
+    <button class="btn btn-lg" id="omniBtn" onclick="analyzeOmni()" style="background:linear-gradient(135deg, var(--violet), var(--indigo)); color:white; width:100%; max-width:400px; border:none; box-shadow:0 8px 16px rgba(139,92,246,0.3);">
+      <i class="fas fa-layer-group"></i>
+      <span class="btn-text" style="font-weight:700; letter-spacing:1px;">SYNTHESIZE DOMAINS</span>
+      <div class="spinner"></div>
+    </button>
+  </div>
+</div>
+
+<!-- Results Area -->
+<div id="omniResult" style="display:none; transition: all 0.5s ease;">
+  
+  <div class="card" style="margin-bottom:24px; text-align:center;">
+    <div style="font-weight:700; font-size:18px; color:var(--text-primary); margin-bottom:8px;">
+      <i class="fas fa-project-diagram" style="color:var(--violet); margin-right:8px;"></i> Tactical Mind Map
+    </div>
+    <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">A visual topology of your fragmented constraints.</p>
+    
+    <div id="omniMindmapRender" style="width:100%; overflow-x:auto; background:var(--bg-soft); border-radius:12px; padding:20px;">
+      <!-- Mermaid map injected here -->
+    </div>
+  </div>
+
+  <div style="margin-bottom:16px;">
+    <div style="font-weight:800; font-size:22px; color:var(--text-primary);">Domain Blueprints</div>
+    <div style="font-size:14px; color:var(--text-muted);">Expand each slice for strictly actionable metrics.</div>
+  </div>
+  
+  <!-- Accordion List injected here -->
+  <div id="omniAccordionContainer" style="display:flex; flex-direction:column; gap:16px;">
+  </div>
+  
+</div>
+
+<style>
+/* Accordion UI Styles */
+.omni-acc-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.omni-acc-item:hover {
+  border-color: rgba(139,92,246,0.4);
+}
+.omni-acc-header {
+  padding: 18px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+}
+.omni-acc-header:hover {
+  background: var(--bg-soft);
+}
+.omni-acc-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.omni-score-badge {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+.omni-acc-body {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  background: var(--bg-card);
+  border-top: 1px solid transparent;
+}
+.omni-acc-item.active .omni-acc-body {
+  padding: 20px;
+  max-height: 1000px;
+  border-top: 1px solid var(--border-light);
+}
+.omni-acc-icon {
+  transition: transform 0.3s ease;
+}
+.omni-acc-item.active .omni-acc-icon {
+  transform: rotate(180deg);
+}
+</style>
+
+<script>
+// Accordion Toggle Logic
+function toggleOmniAccordion(id) {
+  const item = document.getElementById(id);
+  if(item.classList.contains('active')) {
+    item.classList.remove('active');
+  } else {
+    // Optionally close others
+    // document.querySelectorAll('.omni-acc-item').forEach(el => el.classList.remove('active'));
+    item.classList.add('active');
+  }
+}
+</script>
+
+{% endblock %}

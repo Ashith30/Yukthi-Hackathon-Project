@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Decision Making — YUKTHI{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="page-title">🎯 Decision Making</div>
+  <p class="page-subtitle">Choose your domain — AI guidance personalized to your thinking style.</p>
+</div>
+
+{% if personality %}
+<div class="card" style="background:linear-gradient(135deg,var(--indigo-soft),var(--teal-soft)); border:none; margin-bottom:28px;">
+  <div style="display:flex; align-items:center; gap:14px;">
+    <span style="font-size:36px;">{{ personality.archetype_emoji }}</span>
+    <div>
+      <div style="font-weight:700; font-size:15px; color:var(--text-primary);">{{ personality.personality_type }}</div>
+      <div style="font-size:13.5px; color:var(--text-muted); margin-top:2px;">Your decisions will be analyzed through the lens of your personality.</div>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="alert-card" style="margin-bottom:24px;">
+  <strong>⚠️ Complete your personality assessment first</strong> — decision advice becomes dramatically more accurate when personalized.
+  <div style="margin-top:10px;"><a href="/assessment/quiz" class="btn btn-primary btn-sm">Take Assessment</a></div>
+</div>
+{% endif %}
+
+<div class="decision-domain-cards">
+  <a href="/decision/omni" class="domain-card" style="border: 2px solid var(--violet); background:linear-gradient(to bottom right, var(--bg-card), rgba(139,92,246,0.05)); grid-column: 1 / -1;">
+    <div class="domain-card-icon" style="background:var(--violet); color:white; box-shadow:0 4px 12px rgba(139,92,246,0.4);">🔮</div>
+    <div class="domain-card-title" style="font-size: 20px;">Omni-Domain Architect</div>
+    <p class="domain-card-desc" style="font-size:14px;">The ultimate, advanced universal engine. Input any complex scenario, and the AI will dynamically map it across all domains, generating strict risk matrices and visual mind maps.</p>
+    <div class="tag-list" style="margin-top:14px; justify-content:center;">
+      <span class="badge" style="background:var(--violet); color:white;">✨ Premium Agent</span>
+      <span class="badge badge-indigo">Multi-Domain Synthesis</span>
+    </div>
+  </a>
+
+  <a href="/decision/career" class="domain-card">
+    <div class="domain-card-icon" style="background:var(--indigo-soft); color:var(--indigo);">🧭</div>
+    <div class="domain-card-title">Career Path</div>
+    <p class="domain-card-desc">Digital twin scenario analysis, skill gap identification, market insights, and 3-month action plans.</p>
+    <div class="tag-list" style="margin-top:14px; justify-content:center;">
+      <span class="badge badge-indigo">Claude AI</span>
+      <span class="badge badge-teal">Career Data</span>
+    </div>
+  </a>
+  
+  <a href="/decision/finance" class="domain-card">
+    <div class="domain-card-icon" style="background:var(--teal-soft); color:var(--teal);">📈</div>
+    <div class="domain-card-title">Finance</div>
+    <p class="domain-card-desc">Real economic indicators from FRED, live stock data from Alpha Vantage, and AI risk assessment.</p>
+    <div class="tag-list" style="margin-top:14px; justify-content:center;">
+      <span class="badge badge-teal">FRED API</span>
+      <span class="badge badge-green">Alpha Vantage</span>
+    </div>
+  </a>
+  
+  <a href="/decision/planning" class="domain-card">
+    <div class="domain-card-icon" style="background:var(--amber-soft); color:var(--amber);">📅</div>
+    <div class="domain-card-title">Productive Planning</div>
+    <p class="domain-card-desc">Weekly schedules, priority matrices, habit systems, and 90-day vision plans — powered by Gemini.</p>
+    <div class="tag-list" style="margin-top:14px; justify-content:center;">
+      <span class="badge badge-amber">Google Gemini</span>
+      <span class="badge badge-violet">OKR Framework</span>
+    </div>
+  </a>
+</div>
+
+<div class="card" style="margin-top:32px; text-align:center; background:var(--bg-soft);">
+  <div style="font-size:13px; color:var(--text-muted); max-width:600px; margin:0 auto; line-height:1.7;">
+    🔒 All your conversations are stored privately in your account. 
+    Your decision history helps us improve personalization over time. 
+    YUKTHI is a decision-support tool, not a replacement for professional advice.
+  </div>
+</div>
+{% endblock %}

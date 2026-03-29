@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}Sign In — YUKTHI{% endblock %}
+
+{% block auth_content %}
+<div class="auth-page">
+  <div class="auth-left">
+    <div class="auth-content-box">
+      <div style="font-size: 48px; margin-bottom: 8px;">🧠</div>
+      <div class="auth-brand">YUKTHI</div>
+      <p class="auth-headline">
+        Make smarter decisions, understand yourself better, and monitor cognitive wellness — all in one platform.
+      </p>
+      <div class="auth-features-wrapper">
+        <ul class="auth-features">
+          <li><i class="fas fa-brain"></i> Deep Personality Assessment</li>
+          <li><i class="fas fa-compass"></i> AI-Powered Decision Making</li>
+          <li><i class="fas fa-chart-line"></i> Real Market Intelligence</li>
+          <li><i class="fas fa-shield-heart"></i> Early Cognitive Screening</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="auth-right">
+    <div style="margin-bottom: 36px; text-align: center;">
+      <div class="auth-title">Welcome back</div>
+      <p class="auth-subtitle">Sign in to your YUKTHI account</p>
+    </div>
+    
+    <div id="errorMsg" class="alert-card danger" style="display:none; margin-bottom:20px;">
+      <span id="errorText"></span>
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label" for="email">Email Address</label>
+      <input type="email" id="email" class="form-input" placeholder="you@example.com" autocomplete="email">
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label" for="password">Password</label>
+      <input type="password" id="password" class="form-input" placeholder="••••••••" autocomplete="current-password">
+    </div>
+    
+    <button class="btn btn-primary btn-lg btn-block" id="loginBtn" onclick="handleLogin()">
+      <span class="btn-text">Sign In</span>
+      <div class="spinner"></div>
+    </button>
+    
+    <div style="text-align:center; margin-top:20px; color:var(--text-muted); font-size:14px;">
+      New to YUKTHI? 
+      <a href="{{ url_for('auth.register') }}" style="font-weight:600;">Create account</a>
+    </div>
+    
+    <div style="margin-top:32px; padding-top:24px; border-top:1px solid var(--border-light);">
+      <p style="font-size:12.5px; color:var(--text-muted); text-align:center; line-height:1.6;">
+        🔒 Your data is encrypted and never shared. 
+        YUKTHI is not a medical device. 
+        Always consult professionals for important decisions.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById("password").addEventListener("keypress", e => {
+  if (e.key === "Enter") handleLogin();
+});
+
+async function handleLogin() {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  const btn = document.getElementById("loginBtn");
+  const errEl = document.getElementById("errorMsg");
+  const errText = document.getElementById("errorText");
+  
+  if (!email || !password) {
+    errText.textContent = "Please enter your email and password.";
+    errEl.style.display = "block";
+    return;
+  }
+  
+  setLoading(btn, true);
+  errEl.style.display = "none";
+  
+  try {
+    const res = await apiPost("/auth/login", { email, password });
+    if (res.success) {
+      showToast("Welcome back! 👋", "success");
+      setTimeout(() => {
+        if (res.has_assessment) {
+          window.location.href = "/dashboard";
+        } else {
+          window.location.href = "/assessment/quiz";
+        }
+      }, 600);
+    } else {
+      errText.textContent = res.error || "Invalid credentials. Please try again.";
+      errEl.style.display = "block";
+    }
+  } catch {
+    errText.textContent = "Connection error. Please try again.";
+    errEl.style.display = "block";
+  } finally {
+    setLoading(btn, false);
+  }
+}
+</script>
+{% endblock %}

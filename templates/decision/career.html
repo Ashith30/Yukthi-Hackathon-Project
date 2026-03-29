@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block title %}Career Path — YUKTHI{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
+    <a href="/decision/" class="btn btn-ghost btn-sm"><i class="fas fa-arrow-left"></i></a>
+    <div class="page-title" style="margin-bottom:0;">🧭 Career Path Advisor</div>
+  </div>
+  <p class="page-subtitle">Your digital twin meets your career — honest insights, real guidance.</p>
+</div>
+
+{% if personality %}
+<div class="insight-bubble" style="margin-bottom:24px;">
+  <span class="insight-icon">{{ personality.archetype_emoji }}</span>
+  <div class="insight-text">
+    <strong>Personalized for {{ personality.personality_type }}</strong> — 
+    Your {{ personality.decision_style[:80] if personality.decision_style else "unique decision style" }}...
+    <a href="/assessment/report" style="font-size:13px; color:var(--indigo);">View full profile →</a>
+  </div>
+</div>
+{% endif %}
+
+<div class="card" style="margin-bottom:24px;">
+  <div class="card-title" style="margin-bottom:16px;">
+    🤔 What's your career situation?
+  </div>
+  <div class="form-group">
+    <label class="form-label">Tell me what you're thinking about, planning, or struggling with</label>
+    <textarea class="form-textarea" id="careerPrompt" style="min-height:130px;"
+      placeholder="Examples:
+• I'm considering switching from software engineering to product management after 5 years
+• Should I accept a 20% salary raise offer at a startup vs staying at my MNC?
+• I want to become a data scientist but I only have a commerce background — where do I start?
+• My startup idea is in EdTech, am I on the right track or should I pivot?"></textarea>
+  </div>
+  <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+    <button class="btn btn-primary btn-lg" id="analyzeBtn" onclick="analyzeCareer()">
+      <i class="fas fa-robot"></i>
+      <span class="btn-text">Analyze with Digital Twin</span>
+      <div class="spinner"></div>
+    </button>
+    <span style="font-size:13px; color:var(--text-muted);">Powered by Claude AI + Lightcast market data</span>
+  </div>
+</div>
+
+<!-- Example prompts -->
+<div style="margin-bottom:24px;">
+  <div style="font-size:12px; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.6px; margin-bottom:10px;">
+    Quick prompts
+  </div>
+  <div class="tag-list">
+    {% for p in [
+      "Should I pursue an MBA?",
+      "Is data science still worth it in 2025?",
+      "How do I negotiate a promotion?",
+      "Remote vs office — what's better for my career?",
+      "When should I leave a stable job for a startup?"
+    ] %}
+    <span class="tag" style="cursor:pointer;" onclick="document.getElementById('careerPrompt').value='{{ p }}'">
+      {{ p }}
+    </span>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Result area -->
+<div id="careerResult" style="display:none; animation: fadeSlideIn 0.5s ease;"></div>
+
+<!-- History section -->
+<div id="historySection" style="margin-top:32px; display:none;">
+  <div class="page-title" style="font-size:18px; margin-bottom:16px;">Recent Career Analyses</div>
+  <div id="historyList"></div>
+</div>
+
+<script>
+async function analyzeCareer() {
+  const prompt = document.getElementById("careerPrompt").value.trim();
+  const btn = document.getElementById("analyzeBtn");
+  
+  if (!prompt) {
+    showToast("Please describe your career situation", "error");
+    return;
+  }
+  
+  setLoading(btn, true);
+  showOverlay("Your digital twin is thinking...");
+  document.getElementById("careerResult").style.display = "none";
+  
+  try {
+    const res = await apiPost("/decision/career/analyze", { prompt });
+    if (res.success) {
+      renderCareerResult(res.result);
+      showToast("Analysis complete ✓", "success");
+    } else {
+      showToast(res.error || "Analysis failed. Please try again.", "error");
+    }
+  } catch (e) {
+    showToast("Connection error. Please try again.", "error");
+  } finally {
+    setLoading(btn, false);
+    hideOverlay();
+  }
+}
+
+// Load history
+async function loadHistory() {
+  try {
+    const res = await fetch("/decision/history");
+    const data = await res.json();
+    const careerHistory = (data.history || []).filter(h => h.domain === "career");
+    
+    if (careerHistory.length > 0) {
+      document.getElementById("historySection").style.display = "block";
+      const listEl = document.getElementById("historyList");
+      listEl.innerHTML = careerHistory.slice(0, 3).map(h => `
+        <div class="card card-sm" style="margin-bottom:12px; cursor:pointer;" 
+             onclick="renderCareerResult(${JSON.stringify(h.response).replace(/"/g,'&quot;')})">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
+            <p style="font-size:14px; color:var(--text-secondary); flex:1;">${h.prompt.substring(0,120)}${h.prompt.length>120?'...':''}</p>
+            <span style="font-size:11px; color:var(--text-light); white-space:nowrap;">
+              ${new Date(h.created_at).toLocaleDateString()}
+            </span>
+          </div>
+        </div>
+      `).join("");
+    }
+  } catch {}
+}
+loadHistory();
+
+// Allow Enter+Ctrl to submit
+document.getElementById("careerPrompt").addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) analyzeCareer();
+});
+</script>
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#e0e7ff',
+      primaryTextColor: '#3730a3',
+      primaryBorderColor: '#6366f1',
+      lineColor: '#818cf8',
+      secondaryColor: '#f1f5f9',
+      tertiaryColor: '#fff',
+      fontFamily: 'DM Sans, sans-serif'
+    },
+    flowchart: {
+      curve: 'basis',
+      padding: 20
+    }
+  });
+</script>
+{% endblock %}
+{% endblock %}

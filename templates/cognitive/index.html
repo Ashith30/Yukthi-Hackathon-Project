@@ -1,0 +1,344 @@
+{% extends "base.html" %}
+{% block title %}Cognitive Monitor — YUKTHI{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="page-title">🛡️ Cognitive Health Monitor</div>
+  <p class="page-subtitle">Early detection through natural behavior — typing rhythm and speech patterns.</p>
+</div>
+
+<!-- Monitor Hero -->
+<div class="monitor-hero" style="margin-bottom:28px;">
+  <div style="position:relative; z-index:1;">
+    <div class="status-indicator" style="margin-bottom:14px;">
+      <div class="pulse-dot"></div>
+      <span style="font-size:13px; font-weight:600; color:rgba(255,255,255,0.9);">Monitoring Active</span>
+    </div>
+    <div style="font-family:var(--font-display); font-size:24px; color:white; margin-bottom:8px;">
+      How YUKTHI Works
+    </div>
+    <p style="font-size:14px; color:rgba(255,255,255,0.75); max-width:600px; line-height:1.7;">
+      Analyzing your natural typing rhythm and speech patterns to detect early cognitive signals —
+      before symptoms become obvious. Non-invasive. Works silently in the background.
+    </p>
+    <div style="display:flex; gap:24px; margin-top:20px; flex-wrap:wrap;">
+      {% for icon, label in [("⌨️", "Typing Analysis"), ("🎙️", "Speech Analysis"), ("📱", "Mobile Companion"), ("🔔",
+      "Well-wisher Alerts")] %}
+      <div style="text-align:center;">
+        <div style="font-size:22px;">{{ icon }}</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.7); margin-top:4px; font-weight:600;">{{ label }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Two main options -->
+<div class="grid-2" style="margin-bottom:32px;">
+  <!-- Typing Analysis Card -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-title">⌨️ Typing Pattern Analysis</div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:2px;">Type naturally — we analyze the rhythm
+        </div>
+      </div>
+      <span class="badge badge-green">Free Tier</span>
+    </div>
+
+    <textarea class="typing-monitor-area" id="typingArea" placeholder="Start typing anything here — a message to a friend, your thoughts for the day, or anything on your mind. The content doesn't matter, only the natural rhythm of how you type.
+
+Type for at least 30-60 seconds for best results..." rows="6"></textarea>
+
+    <div class="metrics-bar">
+      <div class="metric-item">
+        <div class="metric-value" id="metricWpm">0</div>
+        <div class="metric-label">WPM</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value" id="metricBackspace">0%</div>
+        <div class="metric-label">Corrections</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value" id="metricPause">0</div>
+        <div class="metric-label">Long Pauses</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value" id="metricRhythm">—</div>
+        <div class="metric-label">Rhythm Score</div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:10px; margin-top:4px;">
+      <button class="btn btn-primary" id="analyzeTypingBtn" onclick="submitTypingAnalysis()" disabled>
+        <i class="fas fa-brain"></i>
+        <span class="btn-text">Analyze Patterns</span>
+        <div class="spinner"></div>
+      </button>
+      <button class="btn btn-ghost btn-sm" onclick="clearTyping()">Clear</button>
+    </div>
+    <div id="typingResult" style="display:none; margin-top:16px;"></div>
+  </div>
+
+  <!-- Speech Analysis Card -->
+  <div class="card">
+    <div class="card-header">
+      <div>
+        <div class="card-title">🎙️ Speech Pattern Analysis</div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:2px;">Upload a call recording to analyze</div>
+      </div>
+      <span class="badge badge-indigo">AssemblyAI</span>
+    </div>
+
+    <div
+      style="border:2px dashed var(--border); border-radius:var(--r-lg); padding:36px; text-align:center; margin-bottom:16px;"
+      id="dropZone">
+      <div style="font-size:36px; margin-bottom:12px;">🎵</div>
+      <div style="font-weight:600; color:var(--text-secondary); margin-bottom:6px;">Drop audio file here</div>
+      <div style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">Supports MP3, WAV, M4A, OGG (max 25MB)
+      </div>
+      <input type="file" id="audioFile" accept="audio/*" style="display:none;" onchange="handleAudioFile(this)">
+      <button class="btn btn-outline" onclick="document.getElementById('audioFile').click()">
+        <i class="fas fa-upload"></i> Choose Audio File
+      </button>
+    </div>
+
+    <div id="audioPreview" style="display:none; margin-bottom:16px;">
+      <audio id="audioPlayer" controls style="width:100%; border-radius:var(--r-sm);"></audio>
+      <div style="font-size:13px; color:var(--text-muted); margin-top:8px;" id="audioFileName"></div>
+    </div>
+
+    <div
+      style="background:var(--amber-soft); border-radius:var(--r-sm); padding:12px; margin-bottom:16px; font-size:13px; color:var(--text-secondary);">
+      💡 <strong>Privacy note:</strong> Audio is processed by AssemblyAI and not stored permanently.
+      Only the analysis results are saved.
+    </div>
+
+    <button class="btn btn-primary" id="analyzeSpeechBtn" onclick="submitSpeechAnalysis()" disabled>
+      <i class="fas fa-microphone-alt"></i>
+      <span class="btn-text">Analyze Speech Patterns</span>
+      <div class="spinner"></div>
+    </button>
+    <div id="speechResult" style="display:none; margin-top:16px;"></div>
+  </div>
+</div>
+
+<!-- Well-wisher Setup -->
+<div class="card" style="margin-bottom:28px;">
+  <div class="card-header">
+    <div>
+      <div class="card-title">👨‍👩‍👧 Well-wisher Alert Setup</div>
+      <div style="font-size:13px; color:var(--text-muted); margin-top:2px;">
+        Get alerts sent to a trusted person if significant signals are detected
+      </div>
+    </div>
+    <span class="badge badge-teal">Like Priya & Ramesh</span>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:16px;">
+    <div class="form-group" style="margin-bottom:0;">
+      <label class="form-label">Person Being Monitored (Name)</label>
+      <input type="text" class="form-input" id="monitoredName" placeholder="e.g. Ramesh (Papa)">
+    </div>
+    <div class="form-group" style="margin-bottom:0;">
+      <label class="form-label">Your Relationship</label>
+      <select class="form-select" id="relationship">
+        <option>Son / Daughter</option>
+        <option>Spouse / Partner</option>
+        <option>Parent</option>
+        <option>Sibling</option>
+        <option>Friend</option>
+        <option>Caregiver</option>
+        <option>Self-monitoring</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Well-wisher's Email (who should receive alerts)</label>
+    <input type="email" class="form-input" id="wellwisherEmail" placeholder="priya@example.com"
+      style="max-width:340px;">
+  </div>
+
+  <button class="btn btn-teal" id="setupBtn" onclick="saveMonitoringSetup()">
+    <i class="fas fa-bell"></i>
+    <span class="btn-text">Enable Alert System</span>
+    <div class="spinner"></div>
+  </button>
+</div>
+
+<!-- Recent analyses -->
+{% if recent_analyses %}
+<div>
+  <div class="page-title" style="font-size:18px; margin-bottom:16px;">📊 Recent Analyses</div>
+  <div style="display:flex; flex-direction:column; gap:12px;">
+    {% for a in recent_analyses %}
+    <div class="card card-sm" style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+      <div style="font-size:24px;">{{ "⌨️" if a.analysis_type == "typing" else "🎙️" }}</div>
+      <div style="flex:1;">
+        <div style="font-weight:600; font-size:14px; text-transform:capitalize;">{{ a.analysis_type }} Analysis</div>
+        <div style="font-size:13px; color:var(--text-muted);">{{ a.created_at[:16].replace("T"," ") if a.created_at else
+          "Recent" }}</div>
+      </div>
+      {% if a.result %}
+      <span
+        class="badge badge-{{ 'green' if a.result.get('status_color') == 'green' else 'amber' if a.result.get('status_color') == 'yellow' else 'rose' }}">
+        {{ a.result.get('status', 'Analyzed') }}
+      </span>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  // Initialize typing tracker
+  window.typingTracker = new TypingTracker();
+  let typingUpdateInterval;
+  let audioFileData = null;
+
+  document.getElementById("typingArea").addEventListener("keydown", (e) => {
+    window.typingTracker.recordKey(e);
+    window.typingTracker.updateDisplay();
+
+    setTimeout(() => {
+      const text = document.getElementById("typingArea").value.trim();
+      const wordCount = text ? text.split(/\s+/).length : 0;
+      document.getElementById("analyzeTypingBtn").disabled = wordCount < 10;
+    }, 0);
+  });
+
+  function clearTyping() {
+    document.getElementById("typingArea").value = "";
+    window.typingTracker = new TypingTracker();
+    window.typingTracker.updateDisplay();
+    document.getElementById("analyzeTypingBtn").disabled = true;
+    document.getElementById("typingResult").style.display = "none";
+  }
+
+  async function submitTypingAnalysis() {
+    const btn = document.getElementById("analyzeTypingBtn");
+    const metrics = window.typingTracker.getMetrics();
+
+    setLoading(btn, true);
+    showOverlay("Analyzing your typing patterns...");
+
+    try {
+      const res = await apiPost("/cognitive/analyze-typing", { patterns: metrics });
+      if (res.success) {
+        renderCognitiveResult(res.result, "typingResult");
+        document.getElementById("typingResult").style.display = "block";
+        showToast("Analysis complete ✓", "success");
+      } else {
+        showToast(res.error || "Analysis failed.", "error");
+      }
+    } catch {
+      showToast("Connection error. Try again.", "error");
+    } finally {
+      setLoading(btn, false);
+      hideOverlay();
+    }
+  }
+
+  // Audio file handling
+  function handleAudioFile(input) {
+    const file = input.files[0];
+    if (!file) return;
+
+    const maxSize = 25 * 1024 * 1024;
+    if (file.size > maxSize) {
+      showToast("File too large. Max 25MB.", "error");
+      return;
+    }
+
+    audioFileData = file;
+    const url = URL.createObjectURL(file);
+    document.getElementById("audioPlayer").src = url;
+    document.getElementById("audioPreview").style.display = "block";
+    document.getElementById("audioFileName").textContent = `${file.name} (${(file.size / 1024 / 1024).toFixed(1)} MB)`;
+    document.getElementById("analyzeSpeechBtn").disabled = false;
+  }
+
+  // Drag & drop
+  const dropZone = document.getElementById("dropZone");
+  dropZone.addEventListener("dragover", (e) => { e.preventDefault(); dropZone.style.borderColor = "var(--indigo)"; });
+  dropZone.addEventListener("dragleave", () => { dropZone.style.borderColor = "var(--border)"; });
+  dropZone.addEventListener("drop", (e) => {
+    e.preventDefault();
+    dropZone.style.borderColor = "var(--border)";
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith("audio/")) {
+      const dt = new DataTransfer();
+      dt.items.add(file);
+      document.getElementById("audioFile").files = dt.files;
+      handleAudioFile(document.getElementById("audioFile"));
+    }
+  });
+
+  async function submitSpeechAnalysis() {
+    if (!audioFileData) { showToast("Please select an audio file", "error"); return; }
+
+    const btn = document.getElementById("analyzeSpeechBtn");
+    setLoading(btn, true);
+    showOverlay("Transcribing and analyzing speech...");
+
+    try {
+      const formData = new FormData();
+      formData.append("audio", audioFileData);
+
+      // Upload the file to the backend
+      const uploadRes = await fetch("/cognitive/analyze-speech", {
+        method: "POST",
+        body: formData
+      });
+      const data = await uploadRes.json();
+
+      if (data.success) {
+        renderCognitiveResult(data.result, "speechResult");
+        document.getElementById("speechResult").style.display = "block";
+        showToast("Speech analysis complete ✓", "success");
+      } else {
+        showToast(data.error || "Analysis failed.", "error");
+      }
+    } catch {
+      showToast("Connection error. Try again.", "error");
+    } finally {
+      setLoading(btn, false);
+      hideOverlay();
+    }
+  }
+
+  async function saveMonitoringSetup() {
+    const name = document.getElementById("monitoredName").value.trim();
+    const email = document.getElementById("wellwisherEmail").value.trim();
+    const rel = document.getElementById("relationship").value;
+    const btn = document.getElementById("setupBtn");
+
+    if (!name || !email) {
+      showToast("Please fill in all fields", "error");
+      return;
+    }
+
+    setLoading(btn, true);
+    try {
+      const res = await apiPost("/cognitive/setup-monitoring", {
+        monitored_name: name,
+        wellwisher_email: email,
+        relationship: rel
+      });
+      if (res.success) {
+        showToast(`Alert system enabled for ${name} → ${email} ✓`, "success");
+      } else {
+        showToast(res.error || "Setup failed.", "error");
+      }
+    } catch {
+      showToast("Connection error.", "error");
+    } finally {
+      setLoading(btn, false);
+    }
+  }
+</script>
+{% endblock %}

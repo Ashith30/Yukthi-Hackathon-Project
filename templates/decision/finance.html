@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% block title %}Finance — YUKTHI{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
+    <a href="/decision/" class="btn btn-ghost btn-sm"><i class="fas fa-arrow-left"></i></a>
+    <div class="page-title" style="margin-bottom:0;">📈 Finance Decision Advisor</div>
+  </div>
+  <p class="page-subtitle">Real economic data from FRED & Alpha Vantage — your decisions backed by facts.</p>
+</div>
+
+<!-- Live data pills -->
+<div class="card" style="margin-bottom:24px; background:var(--teal-soft); border-color:rgba(32,201,151,0.25);">
+  <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+    <div class="pulse-dot"></div>
+    <span style="font-size:13px; font-weight:700; color:var(--teal);">Live Economic Data Connected</span>
+  </div>
+  <div class="tag-list" id="econPills">
+    <span class="econ-pill"><i class="fas fa-spinner fa-spin"></i> Loading FRED data...</span>
+  </div>
+</div>
+
+{% if personality %}
+<div class="insight-bubble" style="margin-bottom:24px;">
+  <span class="insight-icon">💡</span>
+  <div class="insight-text">
+    Based on your <strong>{{ personality.personality_type }}</strong> profile, 
+    you tend to {{ personality.decision_style[:100] if personality.decision_style else "approach decisions thoughtfully" }}...
+  </div>
+</div>
+{% endif %}
+
+<div class="card" style="margin-bottom:24px;">
+  <div class="card-title" style="margin-bottom:16px;">💰 What financial decision do you need help with?</div>
+  <div class="form-group">
+    <label class="form-label">Describe your financial situation or question</label>
+    <textarea class="form-textarea" id="financePrompt" style="min-height:130px;"
+      placeholder="Examples:
+• I have ₹5 lakhs saved — should I invest in mutual funds, FDs, or real estate?
+• Is this a good time to take a home loan given current interest rates?
+• I'm 28 years old with no investments — where do I start?
+• Should I pay off my credit card debt or invest in stocks?
+• My salary is ₹80k/month — how should I budget for savings, expenses, and investments?"></textarea>
+  </div>
+  
+  <!-- Optional: Specific stock/index -->
+  <div class="form-group">
+    <label class="form-label">Specific stock or index to analyze? (optional)</label>
+    <input type="text" class="form-input" id="stockSymbol" placeholder="e.g. AAPL, TSLA, SPY, RELIANCE.BSE" style="max-width:320px;">
+  </div>
+  
+  <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+    <button class="btn btn-teal btn-lg" id="financeBtn" onclick="analyzeFinance()">
+      <i class="fas fa-chart-line"></i>
+      <span class="btn-text">Analyze with Market Data</span>
+      <div class="spinner"></div>
+    </button>
+    <span style="font-size:13px; color:var(--text-muted);">Uses FRED + Alpha Vantage + Claude AI</span>
+  </div>
+</div>
+
+<!-- Quick prompts -->
+<div style="margin-bottom:24px;">
+  <div style="font-size:12px; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.6px; margin-bottom:10px;">Quick scenarios</div>
+  <div class="tag-list">
+    {% for p in [
+      "SIP vs lumpsum investment",
+      "Emergency fund — how much?",
+      "When to buy a house vs rent?",
+      "Crypto — worth investing?",
+      "Retire early planning at 40"
+    ] %}
+    <span class="tag" style="cursor:pointer;" onclick="document.getElementById('financePrompt').value='{{ p }}'">{{ p }}</span>
+    {% endfor %}
+  </div>
+</div>
+
+<div id="financeResult" style="display:none;"></div>
+
+<script>
+// Load live economic indicators on page load
+async function loadEconIndicators() {
+  const pillsEl = document.getElementById("econPills");
+  try {
+    // We'll just show static indicators — live data loads during analysis
+    pillsEl.innerHTML = `
+      <span class="econ-pill">📊 FRED: US Inflation</span>
+      <span class="econ-pill">📊 FRED: Fed Funds Rate</span>
+      <span class="econ-pill">📊 FRED: Unemployment</span>
+      <span class="econ-pill">📊 Alpha Vantage: Global Quotes</span>
+    `;
+  } catch {}
+}
+loadEconIndicators();
+
+async function analyzeFinance() {
+  const prompt = document.getElementById("financePrompt").value.trim();
+  const stock = document.getElementById("stockSymbol").value.trim();
+  const btn = document.getElementById("financeBtn");
+  
+  if (!prompt) {
+    showToast("Please describe your financial situation", "error");
+    return;
+  }
+  
+  const fullPrompt = stock ? `${prompt}\nSpecifically analyze: ${stock}` : prompt;
+  
+  setLoading(btn, true);
+  showOverlay("Pulling real market data...");
+  document.getElementById("financeResult").style.display = "none";
+  
+  try {
+    const res = await apiPost("/decision/finance/analyze", { prompt: fullPrompt });
+    if (res.success) {
+      renderFinanceResult(res.result);
+      showToast("Analysis ready ✓", "success");
+    } else {
+      showToast(res.error || "Analysis failed.", "error");
+    }
+  } catch {
+    showToast("Connection error. Please try again.", "error");
+  } finally {
+    setLoading(btn, false);
+    hideOverlay();
+  }
+}
+
+document.getElementById("financePrompt").addEventListener("keydown", e => {
+  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) analyzeFinance();
+});
+</script>
+{% endblock %}

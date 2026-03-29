@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% block title %}Your Personality Report — YUKTHI{% endblock %}
+
+{% block content %}
+<div style="max-width: 900px;">
+  <div class="page-header" style="display:flex; justify-content:space-between; align-items:center;">
+    <div>
+      <div class="page-title">Your Personality Report</div>
+      <p class="page-subtitle">Generated just for you, {{ user.name }}</p>
+    </div>
+    <a href="/dashboard" class="btn btn-outline"><i class="fas fa-home"></i> Dashboard</a>
+  </div>
+  
+  {% if report %}
+  <!-- Hero Card -->
+  <div class="report-hero">
+    <div class="report-emoji">{{ report.archetype_emoji }}</div>
+    <div class="report-type">{{ report.personality_type }}</div>
+    <p class="report-tagline">{{ report.tagline }}</p>
+    <div style="margin-top:20px; display:flex; gap:8px; flex-wrap:wrap;">
+      {% for trait in report.core_traits %}
+      <span style="background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); padding:5px 14px; border-radius:999px; font-size:13px; font-weight:600;">
+        {{ trait }}
+      </span>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <div class="grid-2" style="margin-bottom:24px;">
+    <!-- Big Five Scores -->
+    <div class="card">
+      <div class="card-title" style="margin-bottom:20px;">🧬 The Big Five Profile</div>
+      {% set b5 = report.big5_scores %}
+      {% for trait, score in [("Openness", b5.openness), ("Conscientiousness", b5.conscientiousness), ("Extraversion", b5.extraversion), ("Agreeableness", b5.agreeableness), ("Neuroticism", b5.neuroticism)] %}
+      <div class="big5-bar">
+        <div class="big5-label">
+          <span>{{ trait }}</span>
+          <span>{{ score }}%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="big5-fill" style="width:{{ score }}%"></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    
+    <!-- Strengths & Growth -->
+    <div>
+      <div class="card" style="margin-bottom:16px;">
+        <div class="card-title" style="margin-bottom:14px;">💪 Core Strengths</div>
+        {% for s in report.strengths %}
+        <div style="display:flex; gap:10px; align-items:center; padding:8px 0; border-bottom:1px solid var(--border-light);">
+          <span style="color:var(--teal); font-size:16px;">✓</span>
+          <span style="font-size:14px;">{{ s }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="card" style="background:var(--amber-soft); border-color:var(--amber);">
+        <div class="card-title" style="margin-bottom:14px; color:var(--amber);">🌱 Growth Areas</div>
+        {% for g in report.growth_areas %}
+        <div style="display:flex; gap:10px; align-items:center; padding:8px 0; border-bottom:1px solid rgba(245,159,0,0.15);">
+          <span style="color:var(--amber);">→</span>
+          <span style="font-size:14px;">{{ g }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+  <div class="grid-2" style="margin-bottom:24px;">
+    <div class="card">
+      <div class="card-title" style="margin-bottom:10px;">💬 Communication Style</div>
+      <p style="font-size:14px; color:var(--text-secondary); line-height:1.7;">{{ report.communication_style }}</p>
+    </div>
+    <div class="card">
+      <div class="card-title" style="margin-bottom:10px;">🧩 Decision Style</div>
+      <p style="font-size:14px; color:var(--text-secondary); line-height:1.7;">{{ report.decision_style }}</p>
+    </div>
+  </div>
+  
+  <div class="grid-2" style="margin-bottom:24px;">
+    <div class="card">
+      <div class="card-title" style="margin-bottom:10px;">⚡ Energy Source</div>
+      <p style="font-size:14px; color:var(--text-secondary); line-height:1.7;">{{ report.energy_source }}</p>
+    </div>
+    <div class="card">
+      <div class="card-title" style="margin-bottom:10px;">🤝 Works Best With</div>
+      <p style="font-size:14px; color:var(--text-secondary); line-height:1.7;">{{ report.compatibility_note }}</p>
+      {% if report.famous_similar %}
+      <div style="margin-top:12px; background:var(--violet-soft); border-radius:var(--r-sm); padding:10px 14px;">
+        <span style="font-size:12px; font-weight:700; color:var(--violet);">✨ Shares traits with:</span>
+        <span style="font-size:14px; font-weight:600; color:var(--text-primary);"> {{ report.famous_similar }}</span>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  
+  <!-- Personal Advice -->
+  <div class="card" style="background:linear-gradient(135deg, var(--indigo-soft), var(--violet-soft)); border-color:rgba(76,110,245,0.2); margin-bottom:24px;">
+    <div style="font-size:13px; font-weight:700; color:var(--indigo); text-transform:uppercase; letter-spacing:0.6px; margin-bottom:10px;">
+      🎯 Personal Advice For You
+    </div>
+    <p style="font-size:15px; color:var(--text-primary); line-height:1.7; font-style:italic;">"{{ report.advice }}"</p>
+  </div>
+  
+  <!-- Correction section -->
+  <div class="card" style="margin-bottom:24px; border-color:var(--border);">
+    <div class="card-title" style="margin-bottom:6px;">✏️ Something Feel Off?</div>
+    <p style="font-size:14px; color:var(--text-muted); margin-bottom:16px;">You can correct any assessment point. We'll update your profile.</p>
+    <div class="grid-2">
+      <div class="form-group">
+        <label class="form-label">Correct your type label</label>
+        <input type="text" class="form-input" id="editType" value="{{ report.personality_type }}" placeholder="e.g. The Quiet Innovator">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Correct your tagline</label>
+        <input type="text" class="form-input" id="editTagline" value="{{ report.tagline }}" placeholder="Your tagline...">
+      </div>
+    </div>
+    <button class="btn btn-outline btn-sm" onclick="saveCorrections()">Save Corrections</button>
+  </div>
+  
+  <!-- CTA -->
+  <div class="grid-2">
+    <a href="/decision/" class="domain-card">
+      <div class="domain-card-icon" style="background:var(--indigo-soft);">🎯</div>
+      <div class="domain-card-title">Start Decision Making</div>
+      <p class="domain-card-desc">Get AI-powered guidance tailored to your personality</p>
+    </a>
+    <a href="/cognitive/" class="domain-card">
+      <div class="domain-card-icon" style="background:var(--teal-soft);">🧠</div>
+      <div class="domain-card-title">Set Up Cognitive Monitor</div>
+      <p class="domain-card-desc">Enable wellness monitoring for you or a loved one</p>
+    </a>
+  </div>
+  
+  {% else %}
+  <div class="card" style="text-align:center; padding:60px;">
+    <div style="font-size:48px; margin-bottom:16px;">🔍</div>
+    <div style="font-family:var(--font-display); font-size:22px; margin-bottom:8px;">No Report Yet</div>
+    <p style="color:var(--text-muted); margin-bottom:24px;">Complete the personality assessment first.</p>
+    <a href="/assessment/quiz" class="btn btn-primary btn-lg">Take Assessment</a>
+  </div>
+  {% endif %}
+</div>
+
+<script>
+async function saveCorrections() {
+  const type = document.getElementById("editType").value;
+  const tagline = document.getElementById("editTagline").value;
+  
+  try {
+    await apiPost("/assessment/update-trait", { field: "personality_type", value: type });
+    await apiPost("/assessment/update-trait", { field: "tagline", value: tagline });
+    showToast("Corrections saved ✓", "success");
+  } catch {
+    showToast("Failed to save. Try again.", "error");
+  }
+}
+</script>
+{% endblock %}

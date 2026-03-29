@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% block title %}Productive Planning — YUKTHI{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
+    <a href="/decision/" class="btn btn-ghost btn-sm"><i class="fas fa-arrow-left"></i></a>
+    <div class="page-title" style="margin-bottom:0;">📅 Productive Planning</div>
+  </div>
+  <p class="page-subtitle">Gemini-powered scheduling, priority matrices, and habit systems — built for how you think.</p>
+</div>
+
+{% if personality %}
+<div class="insight-bubble" style="margin-bottom:24px;">
+  <span class="insight-icon">⚡</span>
+  <div class="insight-text">
+    <strong>{{ personality.personality_type }}</strong> energy: {{ personality.energy_source[:120] if personality.energy_source else "Highly personalized planning ahead" }}
+  </div>
+</div>
+{% endif %}
+
+<div class="card" style="margin-bottom:24px;">
+  <div class="card-title" style="margin-bottom:16px;">🎯 What do you want to plan or organize?</div>
+  
+  <!-- Context selectors -->
+  <div class="grid-3" style="margin-bottom:20px; gap:10px;" onmouseleave="updateChallenges(selectedContext || 'default')">
+    {% for label, icon, hint in [
+      ("Work / Career", "💼", "Project planning, deadlines, team work"),
+      ("Personal Goals", "🌱", "Fitness, learning, habits, life goals"),
+      ("Study / Exams", "📚", "Exam prep, learning schedules"),
+      ("Side Project", "🚀", "Startup, freelance, creative project"),
+      ("Life Transition", "🔄", "Moving, new job, major life change"),
+      ("Custom", "✏️", "Anything else you want to plan")
+    ] %}
+    <div class="option-item" onclick="setContext(this, '{{ label }}')" onmouseenter="updateChallenges('{{ label }}')" style="padding:12px; text-align:center; flex-direction:column; gap:6px;">
+      <div style="font-size:22px;">{{ icon }}</div>
+      <div style="font-size:13px; font-weight:600;">{{ label }}</div>
+      <div style="font-size:11.5px; color:var(--text-muted);">{{ hint }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  <div class="form-group">
+    <label class="form-label">Describe what you want to accomplish or organize</label>
+    <textarea class="form-textarea" id="planningPrompt" style="min-height:130px;"
+      placeholder="Examples:
+• I want to learn machine learning in 3 months while working full-time — build me a study plan
+• I'm launching a clothing brand on Instagram — help me plan the first 90 days
+• I procrastinate too much and need a system to stay consistent with my goals
+• I have 6 things I want to do in life but can't prioritize — help me organize them
+• I'm preparing for UPSC and have 8 months — create a weekly schedule"></textarea>
+  </div>
+  
+  <!-- Time horizon -->
+  <div class="form-group">
+    <label class="form-label">Planning horizon</label>
+    <select class="form-select" id="horizon" style="max-width:240px;">
+      <option value="1 week">1 Week Sprint</option>
+      <option value="1 month" selected>1 Month</option>
+      <option value="3 months">3 Months</option>
+      <option value="6 months">6 Months</option>
+      <option value="1 year">1 Year</option>
+    </select>
+  </div>
+  
+  <!-- Flowchart Opt-in -->
+  <div class="form-group" style="margin-bottom: 24px;">
+    <label style="display: flex; align-items: center; cursor: pointer; user-select: none;">
+      <input type="checkbox" id="wantsFlowchart" style="width: 18px; height: 18px; margin-right: 12px; cursor: pointer;">
+      <span style="font-size: 15px; color: var(--text-color); font-weight: 500;">
+        📈 Generate visual flowchart roadmap (Takes slightly longer to load)
+      </span>
+    </label>
+  </div>
+  
+  <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+    <button class="btn btn-primary btn-lg" id="planBtn" onclick="analyzePlanning()" style="background:var(--amber); box-shadow:0 2px 8px rgba(245,159,0,0.35);">
+      <i class="fas fa-calendar-check"></i>
+      <span class="btn-text">Build My Plan</span>
+      <div class="spinner"></div>
+    </button>
+    <span style="font-size:13px; color:var(--text-muted);">Powered by Google Gemini</span>
+  </div>
+</div>
+
+<!-- Quick scenarios -->
+<div style="margin-bottom:24px;">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+    <div style="font-size:12px; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.6px;">Common planning challenges</div>
+  </div>
+  <div class="tag-list" id="challengeTagList" style="min-height: 70px;">
+    <!-- Populated dynamically by JS -->
+  </div>
+</div>
+
+<div id="planningResult" style="display:none;"></div>
+
+<script>
+const challengesData = {
+  "Work / Career": [
+    "Manage a 30-day crucial project",
+    "Organize weekly deliverables",
+    "Overcome procrastination at work",
+    "Prepare for a performance review",
+    "Balance multiple tight deadlines"
+  ],
+  "Personal Goals": [
+    "Build a consistent morning routine",
+    "Learn a new skill in 30 days",
+    "Reduce screen time and focus more",
+    "Read 2 books a month",
+    "Establish a consistent workout habit"
+  ],
+  "Study / Exams": [
+    "Create a 3-month exam study schedule",
+    "Organize daily revision topics",
+    "Balance university classes with studying",
+    "Memorize a large volume of content",
+    "Last-minute 2-week cram plan"
+  ],
+  "Side Project": [
+    "Plan a new app launch",
+    "Launch a brand on Instagram in 90 days",
+    "Find 10 hours a week for my startup",
+    "Create a weekly content calendar",
+    "Prioritize features for an MVP"
+  ],
+  "Life Transition": [
+    "Plan an upcoming move to a new city",
+    "Organize tasks for a new job transition",
+    "Plan a wedding/major event timeline",
+    "Restructure my life after graduation",
+    "Manage a career pivot"
+  ],
+  "Custom": [
+    "Juggling 6 different chaotic tasks",
+    "Prioritize what to do first",
+    "Stop feeling overwhelmed",
+    "Break a massive unstructured goal down",
+    "Get back on track after failing"
+  ],
+  "default": [
+    "Build a morning routine",
+    "Learn a new skill in 30 days",
+    "Reduce screen time and focus more",
+    "Plan a product launch",
+    "Balance work, family, and personal growth"
+  ]
+};
+
+function updateChallenges(domain) {
+  const container = document.getElementById("challengeTagList");
+  if (!container) return;
+  const list = challengesData[domain] || challengesData["default"];
+  container.innerHTML = list.map(p => 
+    `<span class="tag" style="cursor:pointer; transition:all 0.2s; animation:fadeIn 0.3s;" onclick="document.getElementById('planningPrompt').value=this.innerText">${p}</span>`
+  ).join("");
+}
+
+// Initial load
+document.addEventListener("DOMContentLoaded", () => updateChallenges("default"));
+
+let selectedContext = "";
+
+function setContext(el, label) {
+  document.querySelectorAll(".option-item").forEach(o => o.classList.remove("selected"));
+  el.classList.add("selected");
+  selectedContext = label;
+}
+
+async function analyzePlanning() {
+  let prompt = document.getElementById("planningPrompt").value.trim();
+  const horizon = document.getElementById("horizon").value;
+  const btn = document.getElementById("planBtn");
+  
+  if (!prompt) {
+    showToast("Please describe what you want to plan", "error");
+    return;
+  }
+  
+  const fullPrompt = `Context: ${selectedContext || "General"} | Horizon: ${horizon}\n\n${prompt}`;
+  const wantsFlowchart = document.getElementById("wantsFlowchart").checked;
+  
+  setLoading(btn, true);
+  showOverlay("Gemini is building your plan...");
+  document.getElementById("planningResult").style.display = "none";
+  
+  try {
+    const res = await apiPost("/decision/planning/analyze", { 
+      prompt: fullPrompt,
+      wants_flowchart: wantsFlowchart
+    });
+    if (res.success) {
+      renderPlanningResult(res.result);
+      showToast("Your plan is ready! 🎯", "success");
+    } else {
+      showToast(res.error || "Planning failed. Please try again.", "error");
+    }
+  } catch {
+    showToast("Connection error. Please try again.", "error");
+  } finally {
+    setLoading(btn, false);
+    hideOverlay();
+  }
+}
+
+document.getElementById("planningPrompt").addEventListener("keydown", e => {
+  if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) analyzePlanning();
+});
+</script>
+
+<!-- Add Mermaid JS -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+</script>
+{% endblock %}

@@ -97,14 +97,26 @@ def analyze_typing():
         if "error" in result:
             return jsonify({"success": False, "error": result["error"]}), 400
             
-        # Store analysis
-        supabase = get_supabase()
-        supabase.table("cognitive_analyses").insert({
-            "user_id": session["user"]["id"],
-            "analysis_type": "typing",
-            "patterns_data": patterns,
-            "result": result
-        }).execute()
+        # Supabase-py v2 drops custom authorization headers for inserts! We use native REST API to force the JWT.
+        import requests
+        headers = {
+            "apikey": os.getenv("SUPABASE_KEY"),
+            "Authorization": f"Bearer {session['user']['access_token']}",
+            "Content-Type": "application/json",
+            "Prefer": "return=representation"
+        }
+        res_db = requests.post(
+            f"{os.getenv('SUPABASE_URL')}/rest/v1/cognitive_analyses",
+            headers=headers,
+            json={
+                "user_id": session["user"]["id"],
+                "analysis_type": "typing",
+                "patterns_data": patterns,
+                "result": result
+            }
+        )
+        if res_db.status_code >= 400:
+            raise Exception(f"Database rejection (check your API): {res_db.text}")
         
         # Alert well-wisher if needed
         if result.get("should_alert_wellwisher"):
@@ -164,12 +176,24 @@ def analyze_speech():
         
         if "error" in result:
             return jsonify({"success": False, "error": result["error"]}), 400
-            
-        supabase.table("cognitive_analyses").insert({
-            "user_id": session["user"]["id"],
-            "analysis_type": "speech",
-            "result": result
-        }).execute()
+        # Supabase-py v2 drops custom authorization headers for inserts! We use native REST API to force the JWT.
+        headers = {
+            "apikey": os.getenv("SUPABASE_KEY"),
+            "Authorization": f"Bearer {session['user']['access_token']}",
+            "Content-Type": "application/json",
+            "Prefer": "return=representation"
+        }
+        res_db = requests.post(
+            f"{os.getenv('SUPABASE_URL')}/rest/v1/cognitive_analyses",
+            headers=headers,
+            json={
+                "user_id": session["user"]["id"],
+                "analysis_type": "speech",
+                "result": result
+            }
+        )
+        if res_db.status_code >= 400:
+            raise Exception(f"Database rejection (check your API): {res_db.text}")
         
         if result.get("should_alert_wellwisher"):
             monitoring = session.get("monitoring", {})

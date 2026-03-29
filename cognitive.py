@@ -24,16 +24,8 @@ def get_supabase():
                 raise e
                 
         options = ClientOptions(headers={"Authorization": f"Bearer {session['user']['access_token']}"})
-        client = create_client(url, key, options=options)
-        
-        # Supabase v2 Python client requires explictly setting session for RLS to evaluate auth.uid()
-        refresh_token = session["user"].get("refresh_token", "dummy-refresh-token")
-        try:
-            client.auth.set_session(session["user"]["access_token"], refresh_token)
-        except Exception:
-            pass # Suppress refresh failures if dummy token is used, as access_token is already valid
-            
-        return client
+        # Explicitly returning it with ClientOptions bypassing GoTrue state issues
+        return create_client(url, key, options=options)
         
     return create_client(url, key)
 
